@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.list-data-style {
+				color: #888;
+				font-size: 10px;
+				line-height: 24px;
+			}
+			.iconfont.icon-weizhi {
+				font-size: 12px;
+			}
+			.no-data {
+				margin-top: 40px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="no-data">
+			<img src="../image/none.png" />
+			<div class="marTop10 font14 color3896ff">暂无课程开设，敬请期待</div>
+		</div>
+		<!--<div style=" position: relative;">
+			<div onclick="myProj02()">
+				<div class="img-content">
+					<img src="../image/project02.jpg" class="img-responsive">
+					<div class="img-text-index">
+						<div class="font12 color333 floatL">
+							【益涂】
+						</div>
+						<span class=" floatL hangye colorfff marRight4">教育行业</span>
+						<span class=" floatL hangye colorfff">学费1万</span>
+						<div class="floatR pro-comment">
+							--全球涂鸦书写墙的领导者
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="list-content">
+					<div class="floatL list-data color333">已报名人数: 28</div>
+					<div class="floatR list-data color333">开课总人数: 40</div>
+					<div class="clearfix"></div>
+					<div class="fengexian"></div>
+					<div class="floatL list-data-style">
+						<span class="iconfont icon-weizhi"></span>上海市
+					</div>
+					<div class="floatR list-data-style">
+						<span class="iconfont icon-kejian" style=" vertical-align: middle;"></span>3037
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="detail-btn">
+					查看详情
+				</div>
+			</div>
+			<div class="collection">
+				<div class="circle floatL">
+					<span class="iconfont icon-shoucang"></span>
+				</div>
+				<div class="tiwen floatL">
+					10
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div style=" position: relative;">
+			<div class="marTop10" onclick="myProj()">
+				<div class="img-content">
+					<img src="../image/project02.jpg" class="img-responsive">
+					<div class="img-text-index">
+						<div class="font12 color333 floatL">
+							【益涂】
+						</div>
+						<span class=" floatL hangye colorfff marRight4">教育行业</span>
+						<span class=" floatL hangye colorfff">学费1万</span>
+						<div class="floatR pro-comment">
+							--全球涂鸦书写墙的领导者
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="list-content">
+					<div class="floatL list-data color333">已报名人数: 28</div>
+					<div class="floatR list-data color333">开课总人数: 40</div>
+					<div class="clearfix"></div>
+					<div class="fengexian"></div>
+					<div class="floatL list-data-style">
+						<span class="iconfont icon-weizhi"></span>上海市
+					</div>
+					<div class="floatR list-data-style">
+						<span class="iconfont icon-kejian" style=" vertical-align: middle;"></span>3037
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="detail-btn">
+					查看详情
+				</div>
+			</div>
+			<div class="collection">
+				<div class="circle floatL">
+					<span class="iconfont icon-shoucang"></span>
+				</div>
+				<div class="tiwen floatL">
+					10
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>-->
+	</body>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//打开项目详情
+		function myProj() {
+			api.openWin({
+				name : 'projects-class-head',
+				url : './projects-class-head.html',
+			});
+		}
+		//打开项目详情
+		function myProj02() {
+			api.openWin({
+				name : 'projects-class-head02',
+				url : './projects-class-head02.html',
+			});
+		}
+
+		$(".collection").click(function() {
+			$(this).find(".iconfont").removeClass("icon-shoucang").addClass("icon-shoucang02")
+		})
+	</script>
+</html>

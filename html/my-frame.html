@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html,
+			body { 
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.money-area a{
+			  color: #3896ff;
+			  margin: 0px 60px 0px 60px;
+			  position: relative;
+			  height: 30px;
+			  font-size: 12px;
+			  line-height: 30px;
+			}
+			.money-area a:first-child:after{
+			  content: "";
+			  position: absolute;
+			  width: 1px;
+			  right: -52px;
+			  height: 20px;
+			  background-color: #ddd;
+			  top:5px;
+			}
+			.first-a{
+			  background-color: #fff;
+			  /*color: #3896ff;*/
+			  border-radius: 5px;
+			  height: 30px;
+			  padding:0 10px;
+			  line-height: 30px;
+			  font-size: 12px;
+			}
+			.touxiang-area {
+				margin: 10px;
+				width: 48px;
+				height: 48px;
+				border-radius: 50%;
+				background-color: #f00;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div onclick="myInformation();" class="my-box1 marTop10 border-top-bottom">
+			<div class="floatL marRgiht10 marLeft10 touxiang-area">
+				<img src="../image/touxiang.jpg" class="img-responsive" />
+			</div>
+			<div class="floatL my-head-middle">
+				<div>
+					<span class="font14">13661959706</span>
+				</div>
+				<div>
+					<span class="font12">普通会员</span>
+				</div>
+			</div>
+			<em class=" iconfont icon-jiantou floatR marTop24 marRgiht10"></em>
+			<div class="clearfix"></div>
+		</div>
+		<!--<div class="flex-td1 marTop10 border-top-bottom">
+			<div class="flex-tr">
+				<div class="flex-tr-2">
+					<span class="money-area"> <a  class="first-a">充值</a> <a>提现</a> </span>
+				</div>
+			</div>
+		</div>-->
+		<ul class="account_list marTop10">
+			<li class="border-top">
+				<div>拥有公司股权 (家)</div>
+				<div>0</div>
+			</li>
+			<li class="border-top border-right-none">
+				<div>总投资金额 (元)</div>
+				<div>0.00</div>
+			</li>
+			<div class="clearfix"></div>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li onclick="yeji()">
+				<span class="iconfont icon-gengxinpaiming li-icon floatL"></span>
+				<span class="floatL font14">我的业绩</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<span class="floatL iconfont icon-baifang2 li-icon"></span>
+				<span class="floatL font14">客户拜访</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li onclick="myProjects()">
+				<span class="iconfont icon-chanpin li-icon floatL"></span>
+				<span class="floatL font14">我的项目</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="security()">
+				<span class="floatL iconfont icon-anquanshezhi li-icon"></span>
+				<span class="floatL font14">安全设置</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="myFriends()">
+				<span class="floatL iconfont icon-erdurenmai li-icon"></span>
+				<span class="floatL font14">我的人脉圈</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+		<ul class="myinfo-list-all marTop40">
+			<button onclick="login()" class="save-btn">
+				退出账号
+			</button>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+		};
+		
+		//个人信息
+		function myInformation() {
+			api.openWin({
+				name : 'myinfo',
+				url : 'myinfo.html',
+			});
+		}
+		
+		//业绩
+		function yeji() {
+			api.openWin({
+				name : 'mywork-head',
+				url : 'mywork-head.html',
+			});
+		}
+
+		//我的项目
+		function myProjects() {
+			api.openWin({
+				name : 'myProjects',
+				url : 'myProjects.html',
+			});
+		}
+
+		//我的红包
+		function myHongbao() {
+			api.openWin({
+				name : 'myHongbao-head',
+				url : 'myHongbao-head.html',
+			});
+		}
+
+		//我的人脉圈
+		function myFriends() {
+			api.openWin({
+				name : 'myFriends-head',
+				url : 'myFriends-head.html',
+			});
+		}
+
+		//系统消息
+		function messages() {
+			api.openWin({
+				name : 'messages-head',
+				url : 'messages-head.html',
+			});
+		}
+
+		//安全设置
+		function security() {
+			api.openWin({
+				name : 'security',
+				url : 'security.html',
+			});
+		}
+		
+		//客户拜访
+		function visit() {
+			api.openWin({
+				name : 'visit-head',
+				url : 'visit-head.html',
+			});
+		}
+		
+		//退出账号
+		function login() {
+			api.openWin({
+				name : 'my02',
+				url : 'my02.html',
+			});
+		}
+
+	</script>
+</html>

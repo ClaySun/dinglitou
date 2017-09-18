@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layer.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #fff;
+			}
+			
+			.info-area {
+				margin: 10px;
+				padding: 10px;
+			}
+			span.icon-yinxingqia,
+			span.icon-pos { font-size: 32px;}
+			.table-style {
+				width: 100%;
+			}
+			table td {
+				border: 1px solid #ddd;
+				color: #333;
+				font-size: 12px;
+				padding: 8px;
+			}
+			.fukuan {
+				background-color: #eee;
+				border-top: 1px solid #ddd;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				/*width: 44%;*/
+				height: 68px;
+				text-align: center;
+			}
+			.fukuan-down {
+				background-color: #ff9800;
+				border-bottom: 1px solid #ddd;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				/*width: 44%;*/
+				height: 32px;
+				color: #fff;
+				font-size: 12px;
+				text-align: center;
+				line-height: 32px;
+			}
+			.touzi {
+				height: 32px;
+				width: 60px;
+				border-radius: 4px;
+				font-size: 14px;
+				line-height: 32px;
+				text-align: center;
+			}
+			.layui-m-layercont {
+				padding: 10px;
+				line-height: 22px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="info-area bgcolorfff">
+			<!--认购材料拍照上传-->
+			<div class="colorff4426 font14">| 益涂</div>
+			<div class="floatR color888 font12">订单金额:<span class="colorff4426">10300</span>元(投资金额:<span class="colorff4426">10000</span>元,交易额:<span class="colorff4426">300.0</span>元)</div>
+			<div class="clearfix"></div>
+			<div class=" font12 color333 floatL marTop10" style=" width: 40%;">购买人:胡昌龙</div>
+			<div class=" font12 color333 floatL marTop10" style=" width: 60%;">身份证:360122************</div>
+			<div class="clearfix"></div>
+			<div class=" font12 color333 marTop10">支付/回款银行:中国建设银行</div>
+			<div class=" font12 color333 marTop10">支付/回款银行卡号:62270401218704623</div>
+			<div class="marTop10">
+				<table class="table-style">
+					<tr>
+						<td colspan="2">募集账户: 深圳市互联网金融服务有限公司上海分公司</td>
+					</tr>
+					<tr>
+						<td class="color888">转账付款</td>
+						<td class="color888">收款银行: 上海银行 账号: 03002635061</td>
+					</tr>				
+				</table>
+			</div>	
+			<div class="font10 color888">
+				<span class="marRgiht10 floatL">订单编号:SO2016091221050000001</span>|
+				<span class="floatR">下单时间:2016-09-12 21:07:30</span>
+				<div class="clearfix"></div>
+				<span class="marRgiht10">订单状态:<span class="colorff4426">移动支付</span></span>|
+			</div>		
+		</div>
+		
+		<div class="info-area bgcolorfff marTop10">
+			<div class="floatL" style=" width: 48%"; onclick="zhuanzhang()">
+				<div class="fukuan" >
+					<span class="iconfont icon-yinxingqia marTop10"></span>
+				</div>
+				<div class="fukuan-down">
+					转账付款
+				</div>
+			</div>
+			<div class="floatR" style=" width: 48%"; onclick="pos()">
+				<div class="fukuan">
+					<span class="iconfont icon-pos marTop10"></span>
+				</div>
+				<div class="fukuan-down">
+					联通网络POS
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/layer.js"></script>
+	<script type="text/javascript">
+		//协议
+		function zhuanzhang() {
+			api.openWin({
+				name : 'touzi-liucheng-head4-02',
+				url : 'touzi-liucheng-head4-02.html',
+			});
+		}
+		var index;
+		//pos
+		function pos(){
+			index = layer.open({
+			    title: [
+			      '联通支付',
+			      'background-color: #ff4426; color:#fff; font-size: 14px; height: 40px; line-height: 40px;'
+			    ]
+			    ,content: [
+			    	'<div class="font14 color333 t-align">您是否确认使用联通移动POS支付?</div>'+			    	
+			    	'<div class="font12 colorff4426 t-align marTop10">注:确定后该订单只能使用此支付方式完成支付</div>'+
+			    	'<div style=" width: 140px; margin-left: auto; margin-right: auto; margin-top: 10px;">'+
+			    	'<div class="touzi floatL bgcolorddd color333 marRgiht20">取消</div>'+
+			    	'<div class="touzi floatL bgcolorff4426 colorfff" onclick="detail()">确定</div>'+
+			    	'<div class="clearfix"></div>'
+			    ],
+			    style: 'width: 100%; padding: 0; border:none;'
+			  });
+		}
+		
+		function detail(){
+			layer.close(index)
+			layer.open({
+			    title: [
+			      '联通支付',
+			      'background-color: #ff4426; color:#fff; font-size: 14px; height: 40px; line-height: 40px;'
+			    ]
+			    ,content: [
+			    	'<div class="font12 color333 l-align">请仔细核对本次支付官方授权POS机上显示的订单编号:</div>'+			    	
+			    	'<div class="font12 color333 l-align"><span class="colorff4426">SO201609141702306666</span>以保证使用正确的POS设备支付!</div>'+
+			    	'<div class="font14 color333 marTop10 l-align">请在POS机端输入支付号完成支付!</div>'+
+			    	'<div class="font14 color888 marTop10 l-align">支付号:<span class="colorff4426 font16">7070 8610 01150</span></div>'+
+			    	'<div class="font12 color888 marTop10 l-align">订单金额:<span class="colorff4426">1.03</span>万元(投资金额:<span class="colorff4426">1</span>万元,交易费:<span class="colorff4426">300</span>元)</div>'+
+			    	'<div class="font12 color888 l-align">订单编号:SO201609141702306666</div>'+
+			    	'<div class="font12 color888 l-align">发行商户:深圳市某某公司</div>'+
+			    	'<div class="font12 color888 marTop10 l-align floatR" style=" text-decoration: underline;" onclick="tuichu()">退出交易流程</div>'+
+			    	'<div class="clearfix"></div>'
+			    ],
+			    style: 'width: 100%; padding: 0; border:none;'
+			  });
+		}
+		
+		function tuichu() {
+			api.openWin({
+				name : 'myProjects-head',
+				url : 'myProjects-head.html',
+			});
+		}
+	</script>
+</html>

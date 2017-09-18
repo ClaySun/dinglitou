@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				background-color: #ebebeb;
+			}
+			.data-title {
+			}
+			.chart-area {
+				/*position: relative;*/
+				/*left: 20px;*/
+				/*width: auto;*/
+				/*margin-top: 10px;
+				margin-bottom: 10px;*/
+				height: 240px;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="chart" class="chart-area"></div>
+		<ul class="account_list marTop10">
+			<li class="border-top">
+				<div>
+					赢单总金额 (元)
+				</div>
+				<div class="font14 color333">
+					¥ 0.00
+				</div>
+			</li>
+			<li class="border-top border-right-none">
+				<div>
+					目标总金额 (元)
+				</div>
+				<div class="font14 color333">
+					¥ 0.00
+				</div>
+			</li>
+			<div class="clearfix"></div>
+		</ul>
+		<ul class="data-title marTop10">
+			<div class="aui-col-xs-3 t-align">
+				<span class="font12 color666">月份</span>
+			</div>
+			<div class="aui-col-xs-3 t-align">
+				<span class="font12 color666 t-align">目标金额</span>
+			</div>
+			<div class="aui-col-xs-3 t-align">
+				<span class="font12 color666 t-align">赢单金额</span>
+			</div>
+			<div class="aui-col-xs-3 t-align">
+				<span class="font12 color666 t-align">完成率</span>
+			</div>
+			<div class="clearfix"></div>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">01月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">02月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">03月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">04月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">05月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">06月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">07月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">08月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">09月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">10月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">11月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">12月</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/echarts.min.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('chart'));
+		// 指定图表的配置项和数据
+		var option = {
+			title : {
+				text : '业绩和目标',
+				textStyle : {
+					fontSize : 14
+				}
+			},
+			tooltip : {},
+//			legend : {
+//				data : ['目标金额', '赢单金额'],
+//				textStyle : {
+//					fontSize : 10
+//				}
+//			},
+			grid : {
+				left : '16%',
+				right : '8%'
+			},
+			xAxis : {
+				type : 'category',
+				axisLabel : {
+					show : true,
+					interval : 0,
+					margin : 6,
+					textStyle : {
+						fontSize : 10
+					}
+				},
+				data : ["01月", "02月", "03月", "04月", "05月", "06月", "07月", "08月", "09月", "10月", "11月", "12月"]
+			},
+			yAxis : {
+				type : 'value',
+				nameTextStyle : {
+					color : '#333',
+					fontSize : 10
+				},
+				min : '0',
+				max : '9000'
+			},
+//			position: 100,
+//			boundaryGap: false,
+//			nameGap: 200,
+			series : [{
+				name : '目标金额',
+				type : 'line',
+				itemStyle : {
+					normal : {
+						color : '#ff4426'
+					}
+				},
+				data : [5, 20, 36, 10, 10, 20, 5, 20, 36, 10, 10, 20]
+			}, {
+				name : '赢单金额',
+				type : 'line',
+				itemStyle : {
+					normal : {
+						color : '#3896ff'
+					}
+				},
+				data : [10, 30, 56, 18, 80, 10, 0, 40, 76, 90, 40, 0]
+			}]
+		};
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.setOption(option);
+		//个人信息
+		function visit() {
+			api.openWin({
+				name : 'data',
+				url : 'data.html',
+			});
+		}
+	</script>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.info-area {
+				margin: 10px;
+				padding: 10px;
+				margin-bottom: 40px;
+			}
+			.btn-area {
+				margin-left: 10%;
+				margin-right: 10%;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				margin-left: 30%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.aui-list-item-label,
+			.aui-list-item-title {
+				float: left;
+				width: 84%;
+				height: 28px;
+				line-height: 28px;
+				color: #666;
+				font-size: 12px;
+			}
+			.aui-list-item-input {
+				float: left;
+				width: 16%;
+			}
+			.aui-form-list li {
+				border-bottom: 1px solid #ddd;
+				padding-top: 8px;
+				padding-bottom: 8px;
+				padding-left: 10px;
+				line-height: 24px;
+			}
+			.aui-radio {
+				width: 18px;
+				height: 18px;
+				position: relative;
+				margin: 0;
+				margin-top: 8px;
+				background: #ffffff;
+				border: solid 1px #dddddd;
+				border-radius: 50%;
+				display: table;
+				float: left;
+				-webkit-appearance: none;
+				transition: background-color ease 0.1s;
+			}
+			.aui-radio:checked:before, .aui-radio.aui-checked:before {
+				position: absolute;
+				left: 2px;
+				top: -3px;
+				font-size: 12px;
+				display: table;
+				font-family: "auiicon";
+				content: "\e645";
+				color: #ffffff;
+			}
+			.aui-radio:checked:after, .aui-radio.aui-checked:after {
+				position: absolute;
+				left: 2px;
+				top: -3px;
+				font-size: 12px;
+				display: table;
+				font-family: "auiicon";
+				content: "\e645";
+				color: #ffffff;
+				pointer-events: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="info-area bgcolorfff">
+			<div class="font12 color666">
+				请确认投资风险(单选)
+			</div>
+			<ul class="aui-list aui-form-list marTop20">
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-list-item-label">
+							已知晓
+						</div>
+						<div class="aui-list-item-input">
+							<label class="font14 color333">
+								<input class="aui-radio" type="radio" name="demo2">
+							</label>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-list-item-label">
+							否
+						</div>
+						<div class="aui-list-item-input">
+							<label class="font14 color333">
+								<input class="aui-radio" type="radio" name="demo2">
+							</label>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="btn-area">
+			<button onclick="next()" class="next-btn">
+				确定
+			</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//保存并下一步
+		function next() {
+			api.openWin({
+				name : 'fengxian03',
+				url : 'fengxian03.html',
+			});
+		}
+	</script>
+</html>

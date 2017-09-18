@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #fff;
+			}
+			
+			.info-area {
+				margin: 10px;
+				padding: 10px;
+			}
+			.paizhao-btn {
+				background-color: #ffb952;
+				color: #fff;
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-left: 30%;
+				margin-bottom: 10px;
+			}
+			span.icon-paizhao { font-size: 28px;}
+			.pic-area {
+				border: 1px solid #ddd;
+				width: 200px;
+				height: 160px;
+				margin-left: auto;
+				margin-right: auto;
+				color: #ddd;
+				font-size: 60px;
+				text-align: center;
+				line-height: 160px;
+				overflow: hidden;
+			}
+			.pic-title {
+				color: #333;
+				font-size: 12px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="info-area bgcolorfff">
+			<!--认购材料拍照上传-->
+			<div class="colorff4426 font14">| 请完成认购材料拍照上传</div>
+			<!--<div class="paizhao-btn" onclick="paizhao()">
+				<span class="iconfont icon-paizhao"></span>
+				<br />
+				<span>快速连拍</span>
+			</div>-->
+			<div class="pic-area marTop20">
+				<img src="../image/id.jpg" class="img-responsive" />
+			</div>
+			<div class="pic-title marTop10">身份证正面照片</div>
+			<div class="pic-area marTop20">+</div>
+			<div class="pic-title marTop10">身份证反面照片</div>
+			<div class="pic-area marTop20">+</div>
+			<div class="font10 colorff4426 t-align">此银行卡照片与上一步录入银行卡一致</div>
+			<div class="pic-title marTop10">收款银行卡正面照片</div>
+		</div>
+		
+		<ul class="myinfo-list-all">
+			<button onclick="next()" class="next-btn">
+				保存并下一步
+			</button>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar=$api.byId('headbar');			
+			$api.fixIos7Bar(headbar);			
+		};
+		//打开相机
+		function paizhao(){
+			var FNScanner = api.require('FNScanner');
+			FNScanner.openScanner({
+			    autorotation: true
+			}, function(ret, err){        
+			    if( ret ){
+			        alert("支付成功");
+			    }else{
+			        alert("支付失败");
+			    }
+			});
+		}
+		
+		//保存并下一步
+		function next() {
+			api.openWin({
+				name : 'touzi-liucheng-head3',
+				url : 'touzi-liucheng-head3.html',
+			});
+		}
+	</script>
+</html>

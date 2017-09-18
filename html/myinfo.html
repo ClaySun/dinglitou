@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html,
+			body { background-color: #ebebeb; }
+			.tab-active span {
+				color: #3896ff !important;
+				display: block;
+				width: 60%;
+				height: 30px;
+				font-size: 14px;
+				line-height: 30px;
+				margin: auto;
+				border-bottom: 1px solid #3896ff;
+			}
+			.aui-tab-nav li {
+				padding-top: 8px;
+				/*padding-left: 8px;
+				padding-right: 8px;*/
+				margin-left: 2px;
+				margin-right: 2px;
+				line-height: 35px;
+				border-bottom: 1px solid #fff;
+				font-size: 14px;
+			}
+			.flex-tr-3 {
+				width: 65px;
+			}
+			.add-bill1 {
+				display: none;
+			}
+			.add-bill2 {
+				display: none;
+			}
+			.circle {
+				color: #fff;
+				height: 24px;
+				line-height: 24px;
+				text-align: center;
+				width: 24px;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				margin-top: 10px;
+			}			
+			.tijiao-btn02{
+				background-color: #ff4426;
+				color: #fff;
+				text-align: center;
+				font-size: 14px;
+				line-height: 65px;
+			}	
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my">
+							<span class="iconfont icon-chevron-copy"></span>
+						</a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">账户设置</span>
+					</div>
+					<div class="flex-tr-3">
+						<!--<span class="colorfff font12">编辑</span>-->
+					</div>
+				</div>
+			</div>
+			<div class="flex-td2">
+				<div class="aui-tab">
+					<ul class="aui-tab-nav" id="demo1">
+						<li data="0" class="tab-active">
+							<span>个人资料</span>
+						</li>
+						<li data="1">
+							<span>配送地址</span>
+						</li>
+					</ul>
+				</div>
+			</div>	
+			<div id="footer" class="flex-td3">
+				<nav>
+					<div class="menu">
+						<a onclick="index()"> 
+							<span class="iconfont icon-chanpin nav-color"></span> 
+							<i>项目</i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="myNews()"> 
+							<span class="iconfont icon-news-copy nav-color"></span> 
+							<i>资讯</i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="touzizhe()"> 
+							<span class="iconfont icon-touzirentongji nav-color"></span> 
+							<i>投资人 </i> 
+						</a>
+					</div>
+					<div class="menu active">
+						<a> 
+							<span class="iconfont icon-wode nav-color"></span> 
+							<i>我的</i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="more()"> 
+							<span class="iconfont icon-gengduo nav-color"></span> 
+							<i>更多</i> 
+						</a>
+					</div>
+				</nav>
+			</div>		
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+			//选项卡
+			api.parseTapmode();
+			var demo1 = $api.domAll("#demo1 li");
+			for (var i in demo1) {
+				$api.addEvt(demo1[i], 'click', function() {
+					$api.removeCls($api.dom("#demo1 li.tab-active"), 'tab-active');
+					$api.addCls(this, 'tab-active');
+					var index = $api.attr(this, "data");
+					api.setFrameGroupIndex({
+						name : 'myinfo-Group',
+						index : index,
+						scroll : true
+					});
+				});
+			}
+			//打开选项卡
+			api.openFrameGroup({
+				name : 'myinfo-Group',
+				background : '#fff',
+				scrollEnabled : true,
+				rect : {
+					x : 0,
+					y : $api.byId('headbar').offsetHeight + $api.byId('demo1').offsetHeight,
+					w : 'auto',
+					h : api.winHeight - $api.byId('headbar').offsetHeight - $api.byId('demo1').offsetHeight - $api.byId('footer').offsetHeight
+				},
+				index : 0,
+				frames : [{
+					name : 'frame1',
+					url : 'myinfo-frame1.html',
+					bgColor : '#fff'
+				}, {
+					name : 'frame2',
+					url : 'myinfo-frame2.html',
+					bgColor : '#fff'
+				}]
+			}, function(ret, err) {
+				var index = ret.index;
+			});
+		};
+	</script>
+</html>

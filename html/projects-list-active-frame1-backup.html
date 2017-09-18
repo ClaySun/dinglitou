@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layer.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.touzi-title {
+				margin-top: 10px;
+				color: #333;
+				font-size: 14px;
+				text-align: center;
+			}
+			input[type="text"] {
+				margin: 0;
+				padding: 0;
+				padding-left: 10px;
+				border: 1px solid #f00;
+				border-radius: 4px;
+				width: 200px;
+			}
+			select {
+				margin: 0;
+				padding: 0;
+				padding-left: 10px;
+				padding-top: 4px;
+				padding-right: 4px;
+				border: 1px solid #ddd;
+				font-size: 12px;
+				color: #333;
+				width: 200px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+			}
+			.touzi {
+				background-color: #ff4426;
+				height: 32px;
+				width: 80px;
+				border-radius: 4px;
+				margin-left: auto;
+				margin-right: auto;
+				color: #fff;
+				font-size: 14px;
+				line-height: 32px;
+				text-align: center;
+			}
+			.touzi02 {
+				height: 32px;
+				width: 60px;
+				border-radius: 4px;
+				font-size: 14px;
+				line-height: 32px;
+				text-align: center;
+			}
+			.layui-m-layer1 .layui-m-layerchild {
+				border: none;
+				border-radius: 5px;
+			}
+			.layui-m-layercont {
+				padding: 10px;
+				line-height: 22px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>		
+		<div style=" position: relative;">
+			<div class="proj-title bgcolorfff">高达星——互联网+金融行业解决方案</div>		
+			<div class="img-content bgcolorfff">
+				<img src="../image/project02.jpg" class="img-responsive">
+				<div class="img-text">在2016-09-02前融资780万成功</div>
+				<div class="collection">
+					<div class="circle floatL"> 
+						<span class="iconfont icon-shoucang collection-icon"></span>
+					</div>
+					<div class="tiwen floatL">10</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>		
+			<div class="proj-data bgcolorfff">
+				<div class="proj-data01">
+					<div>已完成100.00%</div>
+					<div>剩余天数40天</div>
+				</div>
+				<div class="proj-data02">
+					<ul>
+						<li>780.00万</li>
+						<li>融资总额</li>
+					</ul>
+					<ul>
+						<li>780.00万</li>
+						<li>已筹到</li>
+					</ul>
+					<ul>
+						<li>13.000%</li>
+						<li>出让股权</li>
+					</ul>
+					<ul>
+						<li>1万</li>
+						<li>起投金额</li>
+					</ul>
+				</div>
+			</div>				
+			<div class="proj-comment bgcolorfff">
+				<div class="font12">【项目概述】</div>
+				<p class="font12">上海高达星软件系统有限公司是电子商务、互联网金融、移动互联及供应链、智慧物流软件系统专业供应商，为互联网金融、电子商务、供应链、智慧物流等领域提供专业全面的解决方案、高度成熟的软件系统平台产品和定制化开发服务。</p>
+				<div class="more-content" onclick="moreContent()">点击这里，查看详细情况</div>
+			</div>	
+			<div class="proj-state-active" onclick="touzi()">立即投资</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/layer.js"></script>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/jquery.select.js"></script>
+	<script type="text/javascript">
+		        
+		function moreContent(){
+			api.openWin({
+				name: 'projects-instruction-head',
+				url: 'projects-instruction-head.html'
+			});
+		}
+		
+		var index02;
+		//客户选择
+		function touzi(){
+		
+		
+			index02 = layer.open({
+			    title: [
+			      '购买',
+			      'background-color: #ff4426; color:#fff; font-size: 14px; height: 40px; line-height: 40px;'
+			    ]
+			    ,content: [
+			    	'<div class="font14 color333 t-align">客户选择</div>'+	
+					'<input id="testInput" type="text" />'+
+//			    	'<select id="testInput">'+
+//			    		'<option></option>'+
+//						'<option>孙克磊 13162010179</option>'+
+//						'<option>孙悟空 13820080808</option>'+
+//						'<option>猪八戒 18866899886</option>'+
+//					'</select>'+ 			    	
+			    	'<div style=" width: 140px; margin-left: auto; margin-right: auto; margin-top: 20px;">'+
+				    	'<div class="touzi02 floatL bgcolorddd color333 marRgiht20">取消</div>'+
+				    	'<div class="touzi02 floatL bgcolorff4426 colorfff" onclick="detail()">确定</div>'+
+			    	'<div class="clearfix"></div>'
+			    ],
+			    style: 'width: 100%; padding: 0; border:none;'
+			});
+			  
+			listren();
+		}
+		
+		function listren(){
+			//输入参数，为id、text键值对。  
+			var datas =[{"id":"1","text":"孙克磊"}, {"id":"2","text":"孙悟空"}, {"id":"3","text":"猪八戒"}, {"id":"4","text":"猪小妞"},{"id":"3","text":"猪八戒"}, {"id":"4","text":"猪小妞"},{"id":"3","text":"猪八戒"}, {"id":"4","text":"猪小妞"},{"id":"3","text":"猪八戒"}, {"id":"4","text":"猪小妞"},{"id":"3","text":"猪八戒"}, {"id":"4","text":"猪小妞"}, {"id":"5","text":"傻白甜"}]  
+			//文本点击触发的事件，自行编码，通过this.id和this.innerHTML获取相应的值  
+			var itemSelectFuntion = function(){  
+				alert(this.id + "," + this.innerHTML);  
+			};  
+			//调用方式（第一个参数为input的id，第二个参数为输入参数，第三个为点击事件）  
+			$.selectSuggest('testInput',datas,itemSelectFuntion);  
+		}
+		
+		
+		
+		
+		
+		//付款投资
+		function detail(){
+			layer.close(index02)
+			layer.open({
+			    title: [
+			      '购买',
+			      'background-color: #ff4426; color:#fff; font-size: 14px; height: 40px; line-height: 40px;'
+			    ]
+			    ,content: [
+			    	'<div style=" width: 200px; margin-left: auto; margin-right: auto;">'+
+			    	'<div class="touzi-title">投资金额</div>'+
+			    	'<div class="font12 color888 marLeft20 marTop10">起投金额: <span class="colorff4426">2</span> 万元,每 <span class="colorff4426">1</span> 万元递增</div>'+
+			    	'<div class="font12 color333 t-align marTop10"><input type="text" placeholder="2" />万元</div>'+
+			    	'<div class="font12 color333 marLeft20 marTop10">起投期限: 180 天</div>'+
+			    	'<div class="touzi marTop10" onclick="next()">立即投资</div>'+
+			    	'</div>'
+			    ],
+			    style: 'width: 100%; padding-bottom: 10px; border: none;'
+			  });
+		}
+		function next(){
+			api.openWin({
+				name: 'touzi-liucheng-head',
+				url: 'touzi-liucheng-head.html'
+			});
+		}
+		
+		$(".collection").click(function(){
+			$(this).find(".iconfont").removeClass("icon-shoucang").addClass("icon-shoucang02")
+		})
+	</script>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				background-color: #ebebeb;
+			}
+			.tab-active span {
+				color: #3896ff !important;
+				display: block;
+				/*width: 60%;*/
+				height: 30px;
+				font-size: 12px;
+				line-height: 30px;
+				margin: auto;
+				border-bottom: 1px solid #3896ff;
+			}
+			.aui-tab-nav li {
+				padding-top: 8px;
+				/*padding-left: 8px;
+				 padding-right: 8px;*/
+				margin-left: 2px;
+				margin-right: 2px;
+				line-height: 35px;
+				border-bottom: 1px solid #fff;
+				font-size: 12px;
+			}
+			.flex-tr-3 {
+				width: 65px;
+			}
+			.add-bill1 {
+				display: none;
+			}
+			.add-bill2 {
+				display: none;
+			}
+			.circle {
+				color: #fff;
+				height: 24px;
+				line-height: 24px;
+				text-align: center;
+				width: 24px;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				margin-top: 10px;
+			}
+			.mubiao {
+				margin-top: 12px;
+				margin-left: 10px;
+				font-size: 12px;
+				color: #333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my"> <span class="iconfont icon-chevron-copy"></span> </a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">我的业绩</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>
+			<div id="headbar" class="flex-td1">
+				<div class="my-box1" id="mubiao">
+					<div class="aui-col-xs-8">
+						<div class="mubiao">
+							业绩目标
+						</div>
+					</div>
+					<div class="aui-col-xs-4">
+						<div class="aui-tab">
+							<ul class="aui-tab-nav" id="demo1">
+								<li data="0" class="tab-active">
+									<span>本月</span>
+								</li>
+								<li data="1">
+									<span>本季</span>
+								</li>
+								<li data="2">
+									<span>本年</span>
+								</li>
+							</ul>
+						</div>
+						<!--<ul class="qixian floatR">
+						<li class="current">本月</li>
+						<li>本季</li>
+						<li>本年</li>
+						</ul>-->
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+			//选项卡
+			api.parseTapmode();
+			var demo1 = $api.domAll("#mubiao li");
+			for (var i in demo1) {
+				$api.addEvt(demo1[i], 'click', function() {
+					$api.removeCls($api.dom("#mubiao li.tab-active"), 'tab-active');
+					$api.addCls(this, 'tab-active');
+					var index = $api.attr(this, "data");
+					api.setFrameGroupIndex({
+						name : 'mubiao',
+						index : index,
+						scroll : true
+					});
+				});
+			}
+			//打开选项卡
+			api.openFrameGroup({
+				name : 'mubiao',
+				background : '#fff',
+				scrollEnabled : true,
+				rect : {
+					x : 0,
+					y : $api.byId('headbar').offsetHeight + $api.byId('mubiao').offsetHeight,
+					w : api.winWidth,
+					h : api.winHeight - $api.byId('headbar').offsetHeight - $api.byId('mubiao').offsetHeight
+				},
+				index : 0,
+				frames : [{
+					name : 'frame1',
+					url : './mywork-head-frame01.html',
+					bgColor : '#fff'
+				}, {
+					name : 'frame2',
+					url : './mywork-head-frame02.html',
+					bgColor : '#fff'
+				}, {
+					name : 'frame3',
+					url : './mywork-head-frame03.html',
+					bgColor : '#fff'
+				}]
+			}, function(ret, err) {
+				var index = ret.index;
+			});
+		}
+	</script>
+</html>

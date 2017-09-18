@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>我要提问</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			textarea,
+			img {
+				padding: 0 !important;
+				margin: 0 !important;
+				border: none !important;
+			}
+			input[type="text"] {
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+			.tiwen-content {
+				padding: 8px !important;
+				border: 1px solid #ddd !important;
+				font-size: 12px;
+			}
+			.content-area {
+				margin-top: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			.yanzheng-area {
+				display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-flex-flow: row;
+                flex-flow: row;
+			}
+			.yanzheng-area-b {
+				width: 50px;
+				height: 24px;
+			}
+			.yanzheng-area-a {
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				flex: 1;
+			}
+			.yanzheng {
+				height: 24px;
+				width: 100%;
+				/*line-height: 32px !important;*/
+				padding-left: 8px !important;
+				/*padding-top: 20px !important;*/
+				border-radius: 4px;
+				border: 1px solid #ddd !important;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>		
+		<div id="headbar" class="flex-td1">
+			<div class="flex-tr">
+				<div class="flex-tr-1">
+					<a onclick="api.closeWin();" class="head-my">
+						<span class="iconfont icon-chevron-copy"></span>
+					</a>
+				</div>
+				<div class="flex-tr-2">
+					<span class="logo">我要提问</span>
+				</div>
+				<div class="flex-tr-3"></div>
+			</div>
+		</div>
+		<div class="content-area">
+			<textarea class="marTop10 tiwen-content" placeholder="请输入您的问题" ></textarea>
+			<span class="floatR font12 color888">0/300</span>
+			<div class="clearfix"></div>
+			<div class="yanzheng-area">
+				<div class="yanzheng-area-a">
+					<input type="text" class="yanzheng" placeholder="请输入正确的验证码" />
+				</div>
+				<div class="yanzheng-area-b">
+					<img src="../image/txone.jpg" />
+				</div>
+			</div>
+			<!--<input class="yanzheng" placeholder="请输入正确的验证码" /><img src="../image/txone.jpg" />-->
+			<ul class="myinfo-list-all">
+				<button  onclick="api.closeWin();" class="save-btn">
+					完成提问
+				</button>
+			</ul>
+		</div>				
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">	
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);			
+		}			
+		//打开我要提问
+//		function OK() {
+//			api.openWin({
+//				name: 'ask',
+//				url: './projects-list-frame3.html',
+//				pageParam: {
+//					name: 'ask'
+//				}
+//			});
+//		}	
+		
+	</script>
+</html>

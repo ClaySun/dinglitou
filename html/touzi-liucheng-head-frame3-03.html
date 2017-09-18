@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #fff;
+			}
+			
+			.info-area {
+				margin: 10px;
+				padding: 10px;
+			}
+			.paizhao-btn {
+				background-color: #ffb952;
+				color: #fff;
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-left: 30%;
+				margin-bottom: 10px;
+			}
+			span.icon-paizhao { font-size: 28px;}
+			.pic-area {
+				border: 1px solid #ddd;
+				width: 200px;
+				height: 120px;
+				margin-left: auto;
+				margin-right: auto;
+				color: #ddd;
+				font-size: 60px;
+				text-align: center;
+				line-height: 120px;
+			}
+			.pic-title {
+				color: #333;
+				font-size: 12px;
+				text-align: center;
+			}
+			.aui-checkbox {
+				width: 20px;
+				height: 20px;
+				position: relative;
+				margin: 0;
+				background: #ffffff;
+				border: solid 1px #ddd;
+				border-radius: 4px;
+				display: table;
+				float: left;
+				-webkit-appearance: none;
+				transition: background-color ease 0.1s;
+			}
+			.aui-checkbox:checked, .aui-checkbox.aui-checked {
+				background-color: #ff4426;
+				border: solid 1px #ff4426;
+				text-align: center;
+			}
+			.aui-checkbox:checked:before, .aui-checkbox.aui-checked:before {
+				content: "\e645";
+				position: absolute;
+				left: 3px;
+				top: 0px;
+				font-size: 12px;
+				display: inline-block;
+				font-family: "auiicon";
+				color: #fff;
+			}
+			.aui-checkbox:checked:after, .aui-checkbox.aui-checked:after {
+				position: absolute;
+				left: 3px;
+				top: 0px;
+				font-size: 12px;
+				display: inline-block;
+				font-family: "auiicon";
+				content: "\e645";
+				color: #ffffff;
+				pointer-events: none;
+			}
+			.my-list-all li {
+				background-color: #ddd;
+				border-radius: 4px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="info-area bgcolorfff">
+			<!--认购材料拍照上传-->
+			<div class="colorff4426 font14">| 如果您对以下合同填写没有问题请签名</div>
+			<ul class="my-list-all marTop10">				
+				<li class="border-bottom-none" onclick="xieyi()">
+					<span class="floatL font12 marLeft10">鼎力投会员股权投资服务协议</span>
+					<span class="floatR font12 marRgiht24">已阅读</span>
+					<em class="arrows iconfont icon-jiantou"></em>
+					<div class="clearfix"></div>
+				</li>
+			</ul>
+			<div class="color333 font12 marTop40">
+				<div style=" float: left; width: 8%; margin-top: 6px;">
+					<input class="aui-checkbox" type="checkbox" name="checkbox" >
+				</div>
+				<span style=" width: 92%; float: right;">本人已阅读以上协议所有条款，充分了解并清楚的知晓相应权利和义务，愿意承担相关风险。</span>
+				<div class="clearfix"></div>
+			</div>
+				
+			
+		</div>
+		
+		<ul class="myinfo-list-all">
+			<button onclick="next()" class="next-btn">
+				电子签名
+			</button>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//协议
+		function xieyi() {
+			api.openWin({
+				name : 'xieyi',
+				url : 'xieyi.html',
+			});
+		}
+		//协议
+		function next() {
+			api.openWin({
+				name : 'elec-contract',
+				url : 'elec-contract.html',
+			});
+		}
+	</script>
+</html>

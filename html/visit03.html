@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layer.css" />
+		<style>
+			html,
+			body { background-color: #ebebeb; }
+			.btn-guanzhu {				
+				position: absolute;
+				top: 20px;
+				left: 160px;
+			}
+			.tel {
+				margin-top: 6px;
+			}
+			input[type="text"] {
+				margin: 0;
+				padding: 0;
+				padding-left: 10px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				width: 60px;
+			}
+			.layui-m-layer1 .layui-m-layerchild {
+				border: none;
+				border-radius: 5px;
+			}
+			.layui-m-layercont {
+				padding: 10px;
+				line-height: 22px;
+				text-align: center;
+			}
+			.touzi {
+				background-color: #ff4426;
+				height: 32px;
+				width: 80px;
+				border-radius: 4px;
+				margin-left: auto;
+				margin-right: auto;
+				color: #fff;
+				font-size: 14px;
+				line-height: 32px;
+				text-align: center;
+			}
+			.touzi-title {
+				margin-top: 10px;
+				color: #333;
+				font-size: 14px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div style=" position: relative">-->
+			<div class="touziren-list" onclick="touzijigou()">
+				<div class="touziren-list-up">
+					<div class="pic floatL">
+						<img src="../image/banner01.jpg" />
+					</div>
+					<div class="tel floatL">
+						<span class="font14 color333">131****0179 孙克磊</span>
+					</div>				
+					<div class="clearfix"></div>
+				</div>		
+			</div>
+			<!--<div class="btn-guanzhu">		
+				<span class="focus">+关注</span><span class="focus02">已关注</span>
+			</div>-->
+		<!--</div>
+		<div style=" position: relative">-->
+			<div class="touziren-list" onclick="touzijigou()">
+				<div class="touziren-list-up">
+					<div class="pic floatL">
+						<img src="../image/banner01.jpg" />
+					</div>
+					<div class="tel floatL">
+						<span class="font14 color333">138****0808 猪八戒</span>
+					</div>				
+					<div class="clearfix"></div>
+				</div>		
+			</div>
+			<!--<div class="btn-guanzhu">		
+				<span class="focus">+关注</span><span class="focus02">已关注</span>
+			</div>-->
+		<!--</div>
+		<div style=" position: relative">-->
+			<div class="touziren-list" onclick="touzijigou()">
+				<div class="touziren-list-up">
+					<div class="pic floatL">
+						<img src="../image/banner01.jpg" />
+					</div>
+					<div class="tel floatL">
+						<span class="font14 color333">151****0188 尚于好</span>
+					</div>				
+					<div class="clearfix"></div>
+				</div>		
+			</div>
+			<!--<div class="btn-guanzhu">		
+				<span class="focus">+关注</span><span class="focus02">已关注</span>
+			</div>-->
+		<!--</div>-->
+	</body>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/layer.js"></script>
+	<script type="text/javascript">
+		//客户详情
+		function touzijigou(){
+			layer.open({
+			    title: [
+			      '购买',
+			      'background-color: #ff4426; color:#fff; font-size: 14px; height: 40px; line-height: 40px;'
+			    ]
+			    ,content: [
+			    	'<div style=" width: 200px; margin-left: auto; margin-right: auto;">'+
+			    	'<div class="touzi-title">投资金额</div>'+
+			    	'<div class="font12 color888 marLeft20 marTop10">起投金额: <span class="colorff4426">2</span> 万元,每 <span class="colorff4426">1</span> 万元递增</div>'+
+			    	'<div class="font12 color333 t-align marTop10"><input type="text" placeholder="2" />万元</div>'+
+			    	'<div class="font12 color333 marLeft20 marTop10">起投期限: 180 天</div>'+
+			    	'<div class="touzi marTop10" onclick="next()">立即投资</div>'+
+			    	'</div>'
+			    ],
+			    style: 'width: 100%; padding-bottom: 10px; border: none;'
+			  });
+		}
+		function next(){
+			api.openWin({
+				name: 'touzi-liucheng-head',
+				url: 'touzi-liucheng-head.html'
+			});
+		}
+	</script>
+</html>

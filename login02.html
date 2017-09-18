@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="css/api.css" />
+		<link rel="stylesheet" type="text/css" href="css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<style>	
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.login-form {
+				background: #fff;
+			}
+			.aui-input-addon img {
+				width: 16px;
+				height: 22px;
+			}
+			.forger-p {
+				text-align: center;
+				padding: 12px;
+				margin-top: 5px;
+			}
+			.forger-p a {
+				display: inline-block;
+				color: #888;
+				margin: 0px 10px 0px 10px;
+			}
+			.login-logo {
+				text-align: center;
+				padding-top: 20px;
+			}
+			.login-logo img {
+				width: 120px;
+				height: 120px;
+				margin-bottom: 10px;
+			}
+			.login-logo {
+				background: #fff;
+			}
+			.aui-input-row .aui-input {
+				font-size: 12px;
+				margin-top: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="headbar" class="flex-td1">
+			<div class="flex-tr">
+				<div class="flex-tr-1">
+					<a onclick="api.closeWin();" class="head-my"> 
+						<span class="iconfont icon-chevron-copy"></span> 
+					</a>
+				</div>
+				<div class="flex-tr-2">
+					<span class="logo"> 用户登录 </span>
+				</div>
+				<div  class="flex-tr-3"></div>
+			</div>
+		</div>
+		<div class="login-form">
+			<div class="login-logo">
+				<img src="image/logo.png">
+			</div>
+			<div class="aui-input-row">
+				<span class="aui-input-addon">
+					<span class="iconfont icon-shouji"></span>
+				</span>
+				<input type="text" class="aui-input" placeholder="请输入手机号码"/>
+			</div>
+			<div class="aui-input-row">
+				<span class="aui-input-addon">
+					<span class="iconfont icon-mima"></span>
+				</span>
+				<input type="password" class="aui-input" placeholder="请输入密码"/>
+			</div>
+		</div>
+		<ul class="myinfo-list-all">
+			<button onclick="login()" class="save-btn">
+				登录
+			</button>
+		</ul>
+		<p class="forger-p">
+			<a onclick="reg()">注册账号</a><a onclick="forget()">忘记密码</a>
+		</p>
+	</body>
+	<script type="text/javascript" src="script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+		};
+		//打开注册
+		function reg() {
+			api.openWin({
+				name : 'reg',
+				url : 'reg.html'
+			});
+		}
+
+		//打开忘记密码
+		function forget() {
+			api.openWin({
+				name : 'forget',
+				url : 'forget.html'
+			});
+		}
+
+		//进入页面
+		function login() {
+			api.openWin({
+				name : 'visitor-head02',
+				url : './html/visitor-head02.html',
+			});
+		}
+	</script>
+</html>

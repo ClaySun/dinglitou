@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			
+			.info-area {
+				margin: 10px;
+				padding: 10px;
+			}
+			span.icon-yinxingqia,
+			span.icon-pos { font-size: 32px;}
+			.table-style {
+				width: 100%;
+			}
+			table td {
+				border: 1px solid #ddd;
+				color: #333;
+				font-size: 12px;
+				padding: 8px;
+			}
+			.fukuan {
+				background-color: #eee;
+				border-top: 1px solid #ddd;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				/*width: 44%;*/
+				height: 68px;
+				text-align: center;
+			}
+			.fukuan-down {
+				background-color: #ff9800;
+				border-bottom: 1px solid #ddd;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				/*width: 44%;*/
+				height: 32px;
+				color: #fff;
+				font-size: 12px;
+				text-align: center;
+				line-height: 32px;
+			}
+			.pic-area {
+				border: 1px solid #ddd;
+				width: 200px;
+				height: 160px;
+				/*margin-left: auto;
+				margin-right: auto;*/
+				color: #ddd;
+				font-size: 60px;
+				text-align: center;
+				line-height: 160px;
+				overflow: hidden;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-left: 30%;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="info-area bgcolorfff">
+			<!--认购材料拍照上传-->
+			<div class="colorff4426 font14">| 乙方指定的投资人资金委托付款账户如下</div>
+			<div class="color888 font12 marTop10">订单金额:<span class="colorff4426">10300</span>元(投资金额:<span class="colorff4426">10000</span>元,交易额:<span class="colorff4426">300.0</span>元)</div>
+			<div class=" font12 color333 marTop10">募集账户: 深圳市互联网金融服务有限公司上海分公司</div>
+			<div class=" font12 color333 marTop10">收款银行: 上海银行 账号: 03002635061</div>	
+		</div>
+		
+		<div class="info-area bgcolorfff marTop10">
+			<div class="font12 color666">请先完成转账,在上传支付凭证</div>
+			<div class="pic-area marTop10">
+				<img src="../image/id.jpg" class="img-responsive" />
+			</div>
+		</div>
+		<ul class="myinfo-list-all">
+			<button onclick="next()" class="next-btn">
+				完成提交
+			</button>
+		</ul>		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//协议
+		function next() {
+			api.openWin({
+				name : 'touzi-liucheng-head4-02',
+				url : 'touzi-liucheng-head4-02.html',
+			});
+		}
+	</script>
+</html>

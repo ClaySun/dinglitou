@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.shoucang-xiangmu {
+				margin-top: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+				background-color: #fff;
+				padding-top: 12px;
+				padding-bottom: 16px;
+			}
+			.cangshou-xiangmu-title {
+				color: #333;
+				font-size: 12px;
+				margin-left: 4px;
+				margin-bottom: 4px;
+			}
+			.pic-shoucang {
+				margin-left: 4px;
+				margin-right: 8px;
+				height: 60px;
+				width: 100px;
+				background-color: #f00;
+				overflow: hidden;
+			}
+			.state-label {
+				border: 1px solid #3896ff;
+				color: #3896ff;
+				height: 24px;
+				width: 80px;
+				border-radius: 4px;
+				font-size: 12px;
+				text-align: center;
+				line-height: 24px;
+			}
+			.state-label02 {
+				border: 1px solid #aaa;
+				color: #aaa;
+				height: 24px;
+				width: 80px;
+				border-radius: 4px;
+				font-size: 12px;
+				text-align: center;
+				line-height: 24px;
+			}
+			.handle-btn {
+				background-color: #3896ff;
+				color: #fff;
+				height: 32px;
+				width: 60px;
+				border-radius: 4px;
+				font-size: 12px;
+				line-height: 32px;
+				text-align: center;
+				margin-top: 20px;
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="shoucang-xiangmu">
+			<div class="floatL cangshou-xiangmu-title">益涂</div>
+			<div class="floatR color888 font12 marRgiht10">2016-09-09</div>
+			<div class="clearfix"></div>
+			<div class="floatL pic-shoucang">
+				<img src="../image/banner.jpg" class="img-responsive" />
+			</div>
+			<div class="floatL">
+				<div class="font12 color888">融资总金额: <span class="color3896ff">780.00</span>万元</div>
+				<div class="font12 color888">投资进度: <span class="colorff4426">78.00%</span></div>
+				<div class="state-label">正在进行</div>
+			</div>
+			<div class="floatR handle-btn" onclick="touzi()">查看</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="shoucang-xiangmu">
+			<div class="floatL cangshou-xiangmu-title">益涂</div>
+			<div class="floatR color888 font12 marRgiht10">2016-09-09</div>
+			<div class="clearfix"></div>
+			<div class="floatL pic-shoucang">
+				<img src="../image/banner.jpg" class="img-responsive" />
+			</div>
+			<div class="floatL">
+				<div class="font12 color888">融资总金额: <span class="color3896ff">780.00</span>万元</div>
+				<div class="font12 color888">投资进度: <span class="colorff4426">78.00%</span></div>
+				<div class="state-label">预热中</div>
+			</div>
+			<div class="floatR handle-btn" onclick="touzi()">查看</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="shoucang-xiangmu">
+			<div class="floatL cangshou-xiangmu-title">益涂</div>
+			<div class="floatR color888 font12">2016-09-09</div>
+			<div class="clearfix"></div>
+			<div class="floatL pic-shoucang">
+				<img src="../image/banner.jpg" class="img-responsive" />
+			</div>
+			<div class="floatL">
+				<div class="font12 color888">融资金额: <span class="color3896ff">780.00</span>万元</div>
+				<div class="font12 color888">投资进度: <span class="colorff4426">100.00%</span></div>
+				<div class="state-label02">已失效</div>
+			</div>
+			<div class="floatR handle-btn" onclick="touzi()">查看</div>
+			<div class="clearfix"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar=$api.byId('headbar');			
+			$api.fixIos7Bar(headbar);			
+		};
+	
+		//投资流程
+		function touzi(){
+			api.openWin({
+				name: 'projects-head02-3',
+				url: './projects-head02-3.html',
+			});
+		}
+	</script>
+</html>

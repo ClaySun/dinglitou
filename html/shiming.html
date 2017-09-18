@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			input[type="text"] {
+				border: 1px solid #ddd;
+				width: 100%;
+				border-radius: 4px;
+				font-size: 12px;
+				padding: 4px;
+			}
+			textarea { margin: 0 !important;}
+			.content-shiming {
+				background-color: #fff;
+				padding-left: 12px;
+				padding-right: 12px;
+				padding-top: 12px;
+				padding-bottom: 12px;
+			}
+			.shiming-list {
+				width: 100%;
+				margin-bottom: 10px;
+				margin-top: 10px;
+			}
+			.shiming-left {
+				width: 25%;
+			}
+			.shiming-right {
+				width: 75%;
+			}
+			.yanzhengma-shuru {
+				width: 60%;
+			}
+			.flex-tr-3 {
+				width: 65px;
+			}
+			.tiaokuan {
+				font-size: 12px;
+				margin-top: 20px;
+				margin-left: 22px;
+				line-height: 20px;
+			}
+			.tijiao-btn {
+				background-color: #3896ff;
+				color: #fff;
+				margin-left: 20px;
+				margin-right: 20px;
+				margin-top: 10px;
+				border-radius: 4px;
+				font-size: 14px;
+				height: 32px;
+				line-height: 32px;
+				text-align: center;
+			}
+			.aui-checkbox {
+				width: 20px;
+				height: 20px;
+				position: relative;
+				margin: 0;
+				background: #ffffff;
+				border: solid 1px #dddddd;
+				border-radius: 4px;
+				display: table;
+				float: left;
+				-webkit-appearance: none;
+				transition: background-color ease 0.1s;
+			}
+			.aui-checkbox:checked, .aui-checkbox.aui-checked {
+				background-color: #ff4426;
+				border: solid 1px #ff4426;
+				text-align: center;
+			}
+			
+			.aui-checkbox:checked:before, .aui-checkbox.aui-checked:before {
+				content: "\e645";
+				position: absolute;
+				left: 3px;
+				top: 0;
+				font-size: 12px;
+				display: inline-block;
+				font-family: "auiicon";
+				color: #fff;
+			}
+			.aui-checkbox:checked:after, .aui-checkbox.aui-checked:after {
+				position: absolute;
+				left: 3px;
+				top: 0;
+				font-size: 12px;
+				display: inline-block;
+				font-family: "auiicon";
+				content: "\e645";
+				color: #ffffff;
+				pointer-events: none;
+			}
+		</style>
+	</head>
+	<body>		
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my">
+							<span class="iconfont icon-chevron-copy"></span>
+						</a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">实名认证</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>
+			<div class="flex-td2">
+				<div class="login-form marTop20">
+					<div class="aui-content mt-10">
+						<div class="aui-form">
+							<div class="aui-input-row">
+								<span class="aui-input-addon font12">
+									姓名 :
+								</span>
+								<input type="text" class="aui-input" placeholder="请输入您的真实姓名"/>
+							</div>
+							
+							<div class="aui-input-row">
+								<span class="aui-input-addon font12">
+									身份证
+								</span>
+								<input type="text" class="aui-input" placeholder="请输入您的身份证号码"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ul class="myinfo-list-all">
+					<button onclick="tijiao()" class="save-btn">
+						确定
+					</button>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);			
+		}	
+		//提交按钮 
+		function tijiao(){
+			api.openWin({
+				name: 'renzheng-success',
+				url: './renzheng-success.html',
+			});
+		}	
+	</script>
+</html>

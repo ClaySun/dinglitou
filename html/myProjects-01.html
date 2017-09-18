@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html,
+			body { background-color: #ebebeb; }
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<!--<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my"> 
+							<span class="iconfont icon-chevron-copy"></span> 
+						</a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">我的项目</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>-->
+			<div id="content" class="flex-td2 marTop10">
+				<ul class="my-list-all">
+					<li onclick="myProjects()">
+						<span class="iconfont icon-touzi colorffb22e li-icon floatL"></span>
+						<span class="floatL font12">我投资的项目</span>
+						<em class="arrows iconfont icon-jiantou"></em>
+						<div class="clearfix"></div>
+					</li>
+					<li onclick="myProjects02()">
+						<span class="floatL iconfont icon-zhichi color4dd075 li-icon"></span>
+						<span class="floatL font12">我支持的项目</span>
+						<em class="arrows iconfont icon-jiantou"></em>
+						<div class="clearfix"></div>
+					</li>
+					<li onclick="myProjects03()">
+						<span class="floatL iconfont icon-zhongchou color3896ff li-icon"></span>
+						<span class="floatL font12">我筹资的项目</span>
+						<em class="arrows iconfont icon-jiantou"></em>
+						<div class="clearfix"></div>
+					</li>
+					<li onclick="myProjects04()">
+						<span class="floatL iconfont icon-shoucang colorff806c li-icon"></span>
+						<span class="floatL font12">我收藏的项目</span>
+						<em class="arrows iconfont icon-jiantou"></em>
+						<div class="clearfix"></div>
+					</li>
+				</ul>
+			</div>
+									
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//我投资的项目
+		function myProjects(){
+			api.openWin({
+				name: 'myProjects-head',
+				url: './myProjects-head.html',
+				pageParam: {
+					name: 'myProjects-head'
+				}
+			});
+		}
+				
+		//我支持的项目
+		function myProjects02(){
+			api.openWin({
+				name: 'myProjects-head02',
+				url: './myProjects-head02.html',
+				pageParam: {
+					name: 'myProjects-head02'
+				}
+			});
+		}
+		//我筹资的项目
+		function myProjects03(){
+			api.openWin({
+				name: 'myProjects-head03',
+				url: './myProjects-head03.html',
+				pageParam: {
+					name: 'myProjects-head03'
+				}
+			});
+		}
+		//我收藏的项目
+		function myProjects04(){
+			api.openWin({
+				name: 'myProjects-head04',
+				url: './myProjects-head04.html',
+			});
+		}
+				
+	</script>
+	
+</html>

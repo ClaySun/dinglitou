@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.info-area {
+				margin: 10px;
+				padding: 10px;
+				margin-bottom: 40px;
+			}
+			.btn-area {
+				margin-left: 10%;
+				margin-right: 10%;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.next-btn02 {
+				border: 1px solid  #3896ff;
+				width: 40%;
+				color: #3896ff;
+				height: 40px;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.aui-list-item-label {
+				float: left;
+				width: 60%;
+				height: 28px;
+				line-height: 28px;
+				color: #666;
+				font-size: 12px;
+			}
+			.aui-list-item-input {
+				float: left;
+				width: 40%;
+			}
+			.aui-form-list li {
+				border-bottom: 1px solid #ddd;
+				padding-top: 8px;
+				padding-bottom: 8px;
+			}
+			.aui-radio {
+				width: 18px;
+				height: 18px;
+				position: relative;
+				margin: 0;
+				background: #ffffff;
+				border: solid 1px #dddddd;
+				border-radius: 50%;
+				display: table;
+				float: left;
+				-webkit-appearance: none;
+				transition: background-color ease 0.1s;
+			}
+			.aui-radio:checked:before, .aui-radio.aui-checked:before {
+				position: absolute;
+				left: 2px;
+				top: -1px;
+				font-size: 12px;
+				display: table;
+				font-family: "auiicon";
+				content: "\e645";
+				color: #ffffff;
+			}
+			.aui-radio:checked:after, .aui-radio.aui-checked:after {
+				position: absolute;
+				left: 2px;
+				top: -1px;
+				font-size: 12px;
+				display: table; 
+				font-family: "auiicon";
+				content: "\e645";
+				color: #ffffff;
+				pointer-events: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="info-area bgcolorfff">
+			<ul class="aui-list aui-form-list">
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-list-item-label">
+							金融资金是否高于30万人民币
+						</div>
+						<div class="aui-list-item-input">
+							<label class="font14 color333">
+								<input class="aui-radio" type="radio" name="demo1" checked>
+								<span class="marLeft4"></span>是</label>
+							<label class="font14 color333 marLeft20">
+								<input class="aui-radio" type="radio" name="demo1">
+								<span class="marLeft4"></span>否</label>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-list-item-label">
+							三年内年均收入高于50万人民币
+						</div>
+						<div class="aui-list-item-input">
+							<label class="font14 color333">
+								<input class="aui-radio" type="radio" name="demo2" checked>
+								<span class="marLeft4"></span>是</label>
+							<label class="font14 color333 marLeft20">
+								<input class="aui-radio" type="radio" name="demo2">
+								<span class="marLeft4"></span>否</label>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="btn-area">
+			<button onclick="pre()" class="next-btn02 floatL">
+				上一步
+			</button>
+			<button onclick="next()" class="next-btn floatR">
+				保存并下一步
+			</button>
+			<div class="clearfix"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//上一步
+		function pre() {
+			api.openWin({
+				name : 'fengxian01',
+				url : 'fengxian01.html',
+			});
+		}
+		//保存并下一步
+		function next() {
+			api.openWin({
+				name : 'fengxian03',
+				url : 'fengxian03.html',
+			});
+		}
+	</script>
+</html>

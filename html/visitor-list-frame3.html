@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			input[type="text"] {
+				margin: 0;
+				padding: 0;
+				padding-left: 4px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				width: 100%;
+				background-color: #fff;
+				font-size: 12px;
+				color: #666;
+			}
+			textarea {
+				margin: 0;
+				padding: 4px;
+				margin-top: 4px;
+				border: 1px solid #ddd;
+				font-size: 12px;
+				color: #666;
+			}
+			.jingli-area {
+				margin-top: 16px;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			.aui-list-item-input {
+				width: 100%;
+			}
+			.aui-form-list li {
+				border-bottom: 1px solid #ddd;
+				padding-top: 2px;
+				padding-bottom: 2px;
+				padding-left: 10px;
+				padding-right: 10px;
+				line-height: 24px;
+				margin-top: 20px
+			}
+			.btn-area {
+				margin-left: 10%;
+				margin-right: 10%;
+				margin-top: 40px;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.next-btn02, .next-btn03 {
+				border: 1px solid #3896ff;
+				width: 40%;
+				color: #3896ff;
+				height: 40px;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.next-btn03 {
+				display: none;
+			}
+			.btn-hidden {
+				margin-top: 4px;
+				margin-bottom: 4px;
+				padding-left: 30%;
+				padding-right: 30%;
+			}
+			.button01, .button02 {
+				border: 1px solid #3896ff;
+				color: #3896ff;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="aui-list aui-form-list">
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-input">
+						<input type="text" value="2016-09-20 电话拜访上海翼翔商贸" readonly="readonly" />
+					</div>
+					<div class="aui-list-item-input">
+						<textarea readonly="readonly">项目跟进</textarea>
+					</div>
+				</div>
+				<div class="btn-hidden">
+					<button class="button01 floatL" onclick="bianji()">
+						编辑
+					</button>
+					<button class="button02 floatR">
+						删除
+					</button>
+					<div class="clearfix"></div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-input">
+						<input type="text" value="2016-09-20 外出拜访上海翼翔商贸" readonly="readonly" />
+					</div>
+					<div class="aui-list-item-input">
+						<textarea readonly="readonly">项目沟通</textarea>
+					</div>
+				</div>
+				<div class="btn-hidden">
+					<button class="button01 floatL" onclick="bianji()">
+						编辑
+					</button>
+					<button class="button02 floatR">
+						删除
+					</button>
+					<div class="clearfix"></div>
+				</div>
+			</li>
+		</ul>
+		<div class="btn-area">
+			<button class="next-btn02 floatL">
+				管理
+			</button>
+			<button class="next-btn03 floatL">
+				保存
+			</button>
+			<button onclick="next()" class="next-btn floatR">
+				添加
+			</button>
+			<div class="clearfix"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		$(".btn-hidden").hide()
+		$(".next-btn02").click(function() {
+			$(".btn-hidden").show()
+			$(this).hide()
+			$(".next-btn03").show();
+		})
+		$(".next-btn03").click(function() {
+			$(".btn-hidden").hide()
+			$(this).hide()
+			$(".next-btn02").show();
+		})
+		$(".button02").click(function() {
+			$(this).parents(".aui-list-item").hide()
+		})
+		//编辑
+		function bianji() {
+			api.openWin({
+				name : 'visitor-baifang-head',
+				url : 'visitor-baifang-head.html',
+			});
+		}
+
+		//添加
+		function next() {
+			api.openWin({
+				name : 'visitor-baifang-head',
+				url : 'visitor-baifang-head.html',
+			});
+		}
+	</script>
+</html>

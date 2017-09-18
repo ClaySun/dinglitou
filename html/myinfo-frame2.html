@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>我要提问</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html,
+			body { background-color: #ebebeb; }			
+			textarea,
+			input[type="text"] {
+				padding: 0;
+				margin: 0;
+				border: 1px solid #eee;
+				height: 28px;
+				line-height: 28px;
+				border-radius: 4px;
+			}	
+			.my-list-all li {
+				padding: 4px 10px;
+			}
+			.input-addr {
+				float: left; 
+				margin-left: 10px;
+				font-size: 12px; 
+				width: 80%; 
+			}
+			.title-style {
+				font-size: 12px;
+				line-height: 28px;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				margin-left: 30%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.title-lable {
+				text-align: right;
+				color: #333;
+				font-size: 12px;
+				padding-top: 4px;
+				padding-right: 8px;
+			}
+		</style>
+	</head>
+	<body>		
+		<ul class="my-list-all marTop10">
+			<li>
+				<div class="aui-col-xs-3 title-lable">
+					<span>收 货 人 </span>
+				</div>
+				<div class="aui-col-xs-9">
+					<input type="text" class="input-addr">
+				</div>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li>
+				<div class="aui-col-xs-3 title-lable">
+					<span>联系方式</span>
+				</div>
+				<div class="aui-col-xs-9">
+					<input type="text" class="input-addr">
+				</div>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li onclick="area()">
+				<div class="aui-col-xs-3 title-lable">
+					<span>所在地区</span>
+				</div>
+				<div class="aui-col-xs-9">
+					<span class="floatR title-style marRgiht20">请选择所在地址</span>
+				</div>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li>
+				<div class="aui-col-xs-3 title-lable">
+					<span>详细地址</span>
+				</div>
+				<div class="aui-col-xs-9">
+					<input type="text" class="input-addr">
+				</div>
+				<div class="clearfix"></div>
+			</li>
+		</ul>	
+		<button onclick="next()" class="next-btn marTop40">
+			确定
+		</button>	
+	</body>
+	<script type="text/javascript" src="../script/area.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">		
+		//保存确定
+		function next() {
+			api.openWin({
+				name : 'myinfo',
+				url : './myinfo.html',
+			});
+		}	
+		
+	</script>
+</html>

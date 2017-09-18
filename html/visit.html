@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html,
+			body { background-color: #ebebeb; }
+			.btn-guanzhu {				
+				position: absolute;
+				top: 20px;
+				left: 160px;
+			}
+			.tel {
+				margin-top: 6px;
+			}
+		</style>
+	</head>
+	<body>
+		<div style=" position: relative">
+			<div class="touziren-list" onclick="touzijigou()">
+				<div class="touziren-list-up">
+					<div class="pic floatL">
+						<img src="../image/banner01.jpg" />
+					</div>
+					<div class="tel floatL">
+						<span class="font14 color333">131****0179</span>
+					</div>				
+					<div class="clearfix"></div>
+				</div>		
+			</div>
+			<div class="btn-guanzhu">		
+				<span class="focus">+关注</span><span class="focus02">已关注</span>
+			</div>
+		</div>
+		<div style=" position: relative">
+			<div class="touziren-list" onclick="touzijigou()">
+				<div class="touziren-list-up">
+					<div class="pic floatL">
+						<img src="../image/banner01.jpg" />
+					</div>
+					<div class="tel floatL">
+						<span class="font14 color333">138****0808</span>
+					</div>				
+					<div class="clearfix"></div>
+				</div>		
+			</div>
+			<div class="btn-guanzhu">		
+				<span class="focus">+关注</span><span class="focus02">已关注</span>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//打开项目详情
+		function touzijigou(){
+			api.openWin({
+			name: 'visitor-head',
+				url: 'visitor-head.html',
+			});
+		}
+		$(".focus02").hide()
+		$(".focus").click(function(){
+			$(this).hide()
+			$(this).siblings(".focus02").show()
+		})
+	</script>
+</html>

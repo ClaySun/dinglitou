@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			textarea {
+				margin: 0;
+				padding: 4px;
+			}
+			.btn-area {
+				margin-left: 10%;
+				margin-right: 10%;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.next-btn02 {
+				border: 1px solid  #3896ff;
+				width: 40%;
+				color: #3896ff;
+				height: 40px;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="my-list-all marTop10 border-top">
+			<li onclick="jingli()">
+				<span class="floatL font12 marLeft10">投资经历</span>
+				<span class="floatR font12 marRgiht32">请选择投资经历</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="jingyan()">
+				<span class="floatL font12 marLeft10">投资经验</span>
+				<span class="floatR font12 marRgiht32">请选择投资经验</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="tishi()">
+				<span class="floatL font12 marLeft10">投资风险提示</span>
+				<span class="floatR font12 marRgiht32">请确认投资风险</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>	
+			<li class="marTop20">
+				<div class="marLeft10 marRgiht10">
+					<textarea placeholder="一句话简介" class="font12 color666"></textarea>
+					<span class=" floatR font12 color888">0 / 30</span>
+					<div class="clearfix"></div>
+				</div>				
+			</li>		
+		</ul>
+		<div class="btn-area marTop40">
+			<button onclick="pre()" class="next-btn02 floatL">
+				上一步
+			</button>
+			<button onclick="next()" class="next-btn floatR">
+				完成认证
+			</button>
+			<div class="clearfix"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//投资经历
+		function jingli() {
+			api.openWin({
+				name : 'fengxian-jingli01',
+				url : 'fengxian-jingli01.html',
+			});
+		}
+		//投资经验
+		function jingyan() {
+			api.openWin({
+				name : 'fengxian-jingli02',
+				url : 'fengxian-jingli02.html',
+			});
+		}
+		//投资风险提示
+		function tishi() {
+			api.openWin({
+				name : 'fengxian-jingli03',
+				url : 'fengxian-jingli03.html',
+			});
+		}
+		//上一步
+		function pre() {
+			api.openWin({
+				name : 'fengxian02',
+				url : 'fengxian02.html',
+			});
+		}
+		//保存并下一步
+		function next() {
+			api.confirm({
+			    title: '认证成功',
+			    msg: '是否前去认筹',
+			    buttons: ['是', '否']
+			}, function(ret, err) {
+			    var index = ret.buttonIndex;
+			    switch(index) {
+			    	case 1:
+			    		api.openWin({
+							name : 'index',
+							url : '../index.html',
+						});
+					break;
+					case 2:
+			    		api.openWin({
+							name : 'my',
+							url : './my.html',
+						});
+					break;
+				}
+			});
+		}
+	</script>
+</html>

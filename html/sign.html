@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>我要提问</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				background-color: #ebebeb;
+			}
+			.click-btn {
+				padding: 4px 20px;
+				border-radius: 4px;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>	
+		<div class="flex-box">	
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my">
+							<span class="iconfont icon-chevron-copy"></span>
+						</a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">电子签名</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>
+			<div class="flex-td2">
+				<div id="sign"></div>
+			</div>
+			<div class="flex-td3 t-align" id="footer">
+				<span class="click-btn color333 bgcolorddd marRgiht20 marTop10" onclick="clear()">重签</span>
+				<span class="click-btn colorfff bgcolorff4426" onclick="next()">我同意此次电子签名</span>
+			</div>	
+		</div>					
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">	
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);		
+			
+			var drawingBoard = api.require('drawingBoard');
+			drawingBoard.open({
+			    rect: {
+			        x: 0,
+			        y: $api.byId('headbar').offsetHeight,
+			        w: api.winWidth,
+			        h: api.winHeight - $api.byId('headbar').offsetHeight - $api.byId('footer').offsetHeight
+			    },
+			    styles: {
+			        brush: {
+			            color: '#000',
+			            width: 6
+			        },
+			        bgColor: '#fff'
+			    },
+			    fixedOn: api.frameName
+			});	
+		}			
+		//重签
+		function clear() {
+			var drawingBoardClear = api.require('drawingBoard');
+			drawingBoardClear.clear();
+		}
+		//同意签名
+		function next() {
+			api.openWin({
+				name : 'touzi-liucheng-head4',
+				url : 'touzi-liucheng-head4.html',
+			});
+		}
+		
+		
+	</script>
+</html>

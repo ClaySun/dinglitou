@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				background-color: #ebebeb;
+			}
+			.data-title {
+			}
+			.chart-area {
+				width: auto;
+				height: 240px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="chart" class="chart-area"></div>
+		<ul class="account_list marTop10">
+			<li class="border-top">
+				<div>
+					赢单总金额 (元)
+				</div>
+				<div class="font14 color333">
+					¥ 0.00
+				</div>
+			</li>
+			<li class="border-top border-right-none">
+				<div>
+					目标总金额 (元)
+				</div>
+				<div class="font14 color333">
+					¥ 0.00
+				</div>
+			</li>
+			<div class="clearfix"></div>
+		</ul>
+		<ul class="data-title marTop10">
+			<div class="aui-col-xs-3 t-align">
+				<span class="font12 color666">年度</span>
+			</div>
+			<div class="aui-col-xs-3 t-align">
+				<span class="font12 color666 t-align">目标金额</span>
+			</div>
+			<div class="aui-col-xs-3 t-align">
+				<span class="font12 color666 t-align">赢单金额</span>
+			</div>
+			<div class="aui-col-xs-3 t-align">
+				<span class="font12 color666 t-align">完成率</span>
+			</div>
+			<div class="clearfix"></div>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">全年</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<!--<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">02季</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">03季</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="border-bottom-none" onclick="visit()">
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color3896ff">04季</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">¥ 0.00</span>
+				</div>
+				<div class="aui-col-xs-3 t-align">
+					<span class="font12 color666 t-align">--%</span>
+				</div>
+				<div class="clearfix"></div>
+			</li>	-->		
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/echarts.min.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('chart'));
+		// 指定图表的配置项和数据
+		var option = {
+			title : {
+				text : '业绩和目标',
+				textStyle : {
+					fontSize : 14
+				}
+			},
+			tooltip : {},
+			legend : {
+				data : ['目标金额', '赢单金额'],
+				textStyle : {
+					fontSize : 10
+				}
+			},
+			grid : {
+				left : '16%',
+				right : '8%'
+			},
+			xAxis : {
+				type : 'category',
+				axisLabel : {
+					show : true,
+					interval : 0,
+					margin : 6,
+					textStyle : {
+						fontSize : 10
+					}
+				},
+				data : ["全年"]
+			},
+			yAxis : {
+				type : 'value',
+				nameTextStyle : {
+					color : '#333',
+					fontSize : 10
+				},
+				min : '0',
+				max : '9000'
+			},
+			series : [{
+				name : '目标金额',
+				type : 'bar',
+				itemStyle : {
+					normal : {
+						color : '#ff4426'
+					}
+				},
+				data : [50]
+			}, {
+				name : '赢单金额',
+				type : 'bar',
+				itemStyle : {
+					normal : {
+						color : '#3896ff'
+					}
+				},
+				data : [88]
+			}]
+		};
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.setOption(option);
+		//个人信息
+		function visit() {
+			api.openWin({
+				name : 'data',
+				url : 'data.html',
+			});
+		}
+	</script>
+</html>

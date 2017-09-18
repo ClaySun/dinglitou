@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layer.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			/*.touzi02 {
+				height: 32px;
+				width: 60px;
+				border-radius: 4px;
+				font-size: 14px;
+				line-height: 32px;
+				text-align: center;
+			}*/
+		</style>
+	</head>
+	<body>		
+		<div style=" position: relative;">
+			<div class="proj-title bgcolorfff">高达星——互联网+金融行业解决方案</div>		
+			<div class="img-content bgcolorfff">
+				<img src="../image/project02.jpg" class="img-responsive" onclick="moreContent()">
+				<div class="img-text">在2016-09-02前融资780万成功</div>
+				<div class="collection">
+					<div class="circle floatL"> 
+						<span class="iconfont icon-shoucang collection-icon"></span>
+					</div>
+					<div class="tiwen floatL">10</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>		
+			<div class="proj-data bgcolorfff">
+				<div class="proj-data01">
+					<div>已完成100.00%</div>
+					<div>剩余天数40天</div>
+				</div>
+				<div class="proj-data02">
+					<ul>
+						<li>780.00万</li>
+						<li>融资总额</li>
+					</ul>
+					<ul>
+						<li>780.00万</li>
+						<li>已筹到</li>
+					</ul>
+					<ul>
+						<li>13.000%</li>
+						<li>出让股权</li>
+					</ul>
+					<ul>
+						<li>1万</li>
+						<li>起投金额</li>
+					</ul>
+				</div>
+			</div>				
+			<div class="proj-comment bgcolorfff">
+				<div class="font12">【项目概述】</div>
+				<p class="font12">上海高达星软件系统有限公司是电子商务、互联网金融、移动互联及供应链、智慧物流软件系统专业供应商，为互联网金融、电子商务、供应链、智慧物流等领域提供专业全面的解决方案、高度成熟的软件系统平台产品和定制化开发服务。</p>
+				<div class="more-content" onclick="moreContent()">点击这里，查看详细情况</div>
+			</div>	
+			<div class="proj-state-active" onclick="touzi()">立即投资</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/layer.js"></script>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/jquery.select.js"></script>
+	<script type="text/javascript">
+		        
+		function moreContent(){
+			api.openWin({
+				name: 'projects-instruction-head',
+				url: 'projects-instruction-head.html'
+			});
+		}
+		
+		//客户选择
+		function touzi(){
+			api.openWin({
+				name: 'visit-head03',
+				url: 'visit-head03.html',
+			});
+		}
+						
+		$(".collection").click(function(){
+			$(this).find(".iconfont").removeClass("icon-shoucang").addClass("icon-shoucang02")
+		})
+	</script>
+</html>

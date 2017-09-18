@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html,
+			body { background-color: #ebebeb; }
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my"> 
+							<span class="iconfont icon-chevron-copy"></span> 
+						</a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">我收藏的项目</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>	
+			<div class="flex-td2"></div>
+			<div id="footer" class="flex-td3">
+				<nav>
+					<div class="menu">
+						<a onclick="index()"> 
+							<span class="iconfont icon-chanpin nav-color"></span> 
+							<i>项目</i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="myNews()"> 
+							<span class="iconfont icon-news-copy nav-color"></span> 
+							<i>资讯</i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="touzizhe()"> 
+							<span class="iconfont icon-touzirentongji nav-color"></span> 
+							<i>投资人 </i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="my()"> 
+							<span class="iconfont icon-wode nav-color"></span> 
+							<i>我的</i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="more()"> 
+							<span class="iconfont icon-gengduo nav-color"></span> 
+							<i>更多</i> 
+						</a>
+					</div>
+				</nav>
+			</div>					
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar=$api.byId('headbar');
+			
+			$api.fixIos7Bar(headbar);
+			api.openFrame({
+				name : 'myDingdan-list04',
+				url : 'myDingdan-list04.html',
+				rect : {
+					x : 0,
+					y : $api.byId('headbar').offsetHeight,
+					w : "auto",
+					h : api.winHeight - $api.byId('headbar').offsetHeight - $api.byId('footer').offsetHeight
+				}
+			});
+		};
+		//打开产品
+		function index(){
+			api.openWin({
+				name: 'index',
+				url: '../index.html',
+				pageParam: {
+					name: 'index'
+				}
+			});
+		}				
+		//打开新闻
+		function myNews(){
+			api.openWin({
+				name: 'news',
+				url: './news.html',
+				pageParam: {
+					name: 'news'
+				}
+			});
+		}
+		//打开我的
+		function my(){
+			api.openWin({
+			name: 'my',
+				url: './my.html',
+			});
+		}
+		//投资者
+		function touzizhe(){
+			api.openWin({
+				name: 'touziren',
+				url: './touziren-head.html',
+			});
+		}
+		//打开更多
+		function more(){
+			api.openWin({
+				name: 'more',
+				url: './more.html',
+			});
+		}
+	</script>
+	
+</html>

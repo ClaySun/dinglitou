@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html,
+			body { background-color: #ebebeb; }
+			
+			.tab-active span {
+				color: #3896ff !important;
+				display: block;
+				/*width: 60%;*/
+				height: 30px;
+				font-size: 14px;
+				line-height: 30px;
+				margin: auto;
+				border-bottom: 1px solid #3896ff;
+			}
+			.aui-tab-nav li {
+				padding-top: 8px;
+				/*padding-left: 8px;
+				padding-right: 8px;*/
+				margin-left: 2px;
+				margin-right: 2px;
+				line-height: 35px;
+				border-bottom: 1px solid #fff;
+				font-size: 14px;
+			}
+			.flex-tr-3 {
+				width: 65px;
+			}
+			.add-bill1 {
+				display: none;
+			}
+			.add-bill2 {
+				display: none;
+			}
+			.circle {
+				color: #fff;
+				height: 24px;
+				line-height: 24px;
+				text-align: center;
+				width: 24px;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my"> 
+							<span class="iconfont icon-chevron-copy"></span> 
+						</a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">工作经历</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>			
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+			
+			api.openFrame({
+				name : 'myinfo-career-head-frame',
+				url : 'myinfo-career-head-frame.html',
+				rect : {
+					x : 0,
+					y : $api.byId('headbar').offsetHeight,
+					w : "auto",
+					h : api.winHeight - $api.byId('headbar').offsetHeight
+				}
+			});			
+		}
+	</script>
+</html>

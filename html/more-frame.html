@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html,
+			body { background-color: #ebebeb; }
+			.money-area a{
+			  color: #3896ff;
+			  margin: 0px 40px 0px 40px;
+			  position: relative;
+			  height: 30px;
+			  font-size: 12px;
+			  line-height: 30px;
+			}
+			.money-area a:first-child:after{
+			  content: "";
+			  position: absolute;
+			  width: 1px;
+			  right: -32px;
+			  height: 20px;
+			  background-color: #ddd;
+			  top:5px;
+			}
+			.first-a{
+			  background-color: #fff;
+			  /*color: #3896ff;*/
+			  border-radius: 5px;
+			  height: 30px;
+			  padding:0px 10px 0px 10px;
+			  line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>		
+		<ul class="my-list-all marTop10 border-top">
+			<!--<li onclick="moreDingdan()">
+				<span class="iconfont icon-dingdan li-icon floatL"></span>
+				<span class="floatL font12">订单</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="moreLicaishi()">
+				<span class="iconfont icon-huihuilicaishi li-icon floatL"></span>
+				<span class="floatL font12">理财师</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="moreZhushou()">
+				<span class="floatL iconfont icon-yewuzhushou li-icon"></span>
+				<span class="floatL font12">行销助手</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>-->
+			<li onclick="moreAbout()">
+				<span class="floatL iconfont icon-guanyu li-icon"></span>
+				<span class="floatL font12">关于我们</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="moreGonggao()">
+				<span class="floatL iconfont icon-gonggao li-icon"></span>
+				<span class="floatL font12">公告</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="moreCommonquestions()">
+				<span class="floatL iconfont icon-changjianwenti li-icon"></span>
+				<span class="floatL font12">常见问题</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="moreZhaopin()">
+				<span class="floatL iconfont icon-zhaopin li-icon"></span>
+				<span class="floatL font12">诚聘英才</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="moreGuquan()">
+				<span class="floatL iconfont icon-guanyu li-icon"></span>
+				<span class="floatL font12">关于股权融资</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="moreDongtai()">
+				<span class="floatL iconfont icon-dongtai li-icon"></span>
+				<span class="floatL font12">公司动态</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<li onclick="moreTeam()">
+				<span class="floatL iconfont icon-tuandui li-icon"></span>
+				<span class="floatL font12">鼎力投团队</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+			<!--<li onclick="moreWenjuan()">
+				<span class="floatL iconfont icon-wenjuan li-icon"></span>
+				<span class="floatL font12">风险问卷调查</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>-->
+		</ul>
+		<ul class="my-list-all marTop10 border-top marBottom40">
+			<li onclick="moretucao()">
+				<span class="iconfont icon-woyaotucao li-icon floatL"></span>
+				<span class="floatL font12">我要吐槽</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+		};
+		
+		//理财师
+		function moreLicaishi() {
+			api.openWin({
+				name : 'moreLicaishi',
+				url : 'moreLicaishi.html',
+			});
+		}
+
+		//订单
+		function moreDingdan() {
+			api.openWin({
+				name : 'moreDingdan-head',
+				url : 'moreDingdan-head.html',
+			});
+		}
+
+		//行销助手
+		function moreZhushou() {
+			api.openWin({
+				name : 'moreZhushou-head',
+				url : 'moreZhushou-head.html',
+			});
+		}
+
+		//关于我们
+		function moreAbout() {
+			api.openWin({
+				name : 'moreAbout-head',
+				url : 'moreAbout-head-frame.html',
+			});
+		}
+
+		//问卷调查
+		function moreWenjuan() {
+			api.openWin({
+				name : 'moreWenjuan-head',
+				url : 'moreWenjuan-head.html',
+			});
+		}
+
+		//公告
+		function moreGonggao() {
+			api.openWin({
+				name : 'moreGonggao-head',
+				url : 'moreGonggao-head-frame.html',
+			});
+		}
+
+		//常见问题
+		function moreCommonquestions() {
+			api.openWin({
+				name : 'moreCommonquestions-head',
+				url : 'moreCommonquestions-head.html',
+			});
+		}
+
+		//招聘
+		function moreZhaopin() {
+			api.openWin({
+				name : 'moreZhaopin-head',
+				url : 'moreZhaopin-head.html',
+			});
+		}
+
+		//关于股权融资
+		function moreGuquan() {
+			api.openWin({
+				name : 'moreGuquan-head',
+				url : 'moreGuquan-head-frame.html',
+			});
+		}
+
+		//公司动态
+		function moreDongtai() {
+			api.openWin({
+				name : 'moreDongtai-head',
+				url : 'moreDongtai-head.html',
+			});
+		}
+		
+		//公司团队
+		function moreTeam() {
+			api.openWin({
+				name : 'moreTeam-head',
+				url : 'moreTeam-head-frame.html',
+			});
+		}
+		
+		//信息披露
+		function moreMessages() {
+			api.openWin({
+				name : 'moreMessages-head',
+				url : 'moreMessages-head.html',
+			});
+		}
+		
+		//我要吐槽
+		function moretucao() {
+			api.openWin({
+				name : 'moretucao-head',
+				url : 'feedback.html',
+			});
+		}
+	</script>
+</html>

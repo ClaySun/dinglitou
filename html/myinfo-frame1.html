@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>我要提问</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				background-color: #ebebeb;
+			}
+			textarea, input[type="text"], img {
+				padding: 0 !important;
+				margin: 0 !important;
+				border: none !important;
+			}
+			select, option {
+				margin: 0;
+				padding: 0;
+				padding-left: 20px;
+				border: none;
+			}
+			.my-list-all li {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			.xueli {
+				width: 20%;
+				margin-right: 20px;
+				font-size: 12px;
+				color: #666;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="my-list-all marTop10">
+			<li onclick="baseUploadPic()">
+				<span class="floatL font12">头像</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li onclick="xueli()">
+				<span class="floatL font12">最高学历</span>
+				<div class="floatR xueli">
+					<!--最高学历-->
+				</div>
+				<!--<div class="floatR" style=" width:20%; margin-right: 20px;">
+					<select>
+						<option></option>
+						<option>博士</option>
+						<option>硕士</option>
+						<option>本科</option>
+						<option>大专</option>
+						<option>中学</option>
+						<option>小学</option>
+					</select>
+				</div>-->
+				<div class="clearfix"></div>
+				<em class="arrows iconfont icon-jiantou"></em>
+			</li>
+		</ul>
+		<ul class="my-list-all marTop10">
+			<li onclick="moreCareer()">
+				<span class="floatL font12">工作经历</span>
+				<em class="arrows iconfont icon-jiantou"></em>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+		}
+		//换头像
+		function baseUploadPic(ajaxObject, type) {
+			api.actionSheet({
+				title : '选择图片来源',
+				buttons : ['立即拍照', '浏览相册']
+			}, function(ret, err) {
+				var index = ret.buttonIndex;
+				switch(index) {
+					// 拍照
+					case 1:
+						// 打开拍照
+						api.getPicture({
+							sourceType : "camera",
+							encodingType : "jpg",
+							destinationType : "base64",
+							mediaValue : "pic",
+							saveToPhotoAlbum : true
+						}, function(ret, err) {
+							if (ret && ret.base64Data && ret.data) {
+								api.confirm({
+									title : '提示',
+									msg : '确定上传吗',
+									buttons : ['确定', '取消']
+								}, function(msg, err) {
+									if (msg.buttonIndex == 1) {
+										api.showProgress({
+											style : 'default',
+											animationType : 'fade',
+											title : '加载中...',
+											text : '',
+											modal : false
+										});
+										//先判断图片大小
+										//如果大于规定值则终止上传并提示
+										if (compareSize(ret.base64Data, 12)) {
+											api.toast({
+												msg : "上传图片不能大于10M",
+												duration : 2000,
+												location : 'center'
+											});
+											return;
+										}
+										//压缩方法 需要引用aui_compress.min.js
+										auiCompress(ret.data, {
+											width : 1000,
+											quantity : 1,
+											// 压缩成功
+											success : function(ret) {
+												baseUploadPicAjax(ajaxObject, type, ret);
+											}
+										});
+									}
+								});
+							}
+						});
+						break;
+					// 打开相册
+					case 2:
+						api.getPicture({
+							sourceType : "album",
+							encodingType : "jpg",
+							destinationType : "base64",
+							mediaValue : "pic",
+						}, function(ret, err) {
+							if (ret && ret.base64Data && ret.data) {
+								api.confirm({
+									title : '提示',
+									msg : '确定上传吗',
+									buttons : ['确定', '取消']
+								}, function(msg, err) {
+									if (msg.buttonIndex == 1) {
+										api.showProgress({
+											style : 'default',
+											animationType : 'fade',
+											title : '加载中...',
+											text : '',
+											modal : false
+										});
+										//先判断图片大小
+										//如果大于规定值则终止上传并提示
+										if (compareSize(ret.base64Data, 12)) {
+											api.toast({
+												msg : "上传图片不能大于10M",
+												duration : 2000,
+												location : 'center'
+											});
+											return;
+										}
+										//压缩方法 需要引用aui_compress.min.js
+										auiCompress(ret.data, {
+											width : 1000,
+											quantity : 1,
+											// 压缩成功
+											success : function(ret) {
+												baseUploadPicAjax(ajaxObject, type, ret);
+											}
+										});
+									}
+								});
+							}
+						});
+						break;
+				}
+			});
+		}
+		
+		function xueli() {
+			api.actionSheet({
+			    title: '选择学历', 
+			    buttons: ['博士', '硕士', '本科', '大专', '中学', '小学']
+			}, function(ret, err) {
+			    var index = ret.buttonIndex;
+			});
+		}
+
+		//工作经历
+		function moreCareer() {
+			api.openWin({
+				name : 'myinfo-career-head',
+				url : './myinfo-career-head.html',
+				pageParam : {
+					name : 'myinfo-career-head'
+				}
+			});
+		}
+	</script>
+</html>

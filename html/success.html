@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.flex-tr-3 {
+				width: 65px;
+			}
+			.tijiao-btn {
+				background-color: #3896ff;
+				color: #fff;
+				margin-left: 30%;
+				margin-right: 30%;
+				margin-top: 80px;
+				border-radius: 4px;
+				font-size: 14px;
+				height: 32px;
+				line-height: 32px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1"></div>
+					<div class="flex-tr-2">
+						<span class="logo">交易结果</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>
+			<div class="flex-td2">
+				<div class="marTop40 t-align font14 color333">恭喜您 ! 交易成功 !</div>	
+				<div class="tijiao-btn" onclick="tijiao()">关闭</div>		
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);			
+		}		
+		//关闭按钮 
+		function tijiao(){
+			api.openWin({
+				name: 'myProjects-head',
+				url: './myProjects-head.html',
+			});
+		}	
+	</script>
+</html>

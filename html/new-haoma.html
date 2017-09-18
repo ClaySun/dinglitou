@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.login-form {
+				background: #fff;
+			}
+			.login-form input {
+				margin: 0px;
+			}
+			.aui-input-addon img {
+				width: 16px;
+				height: 22px;
+			}
+			.aui-list .aui-list-item-label {
+				width: 20%;
+			}
+			.xieyi-p {
+				padding: 10px 15px 10px 15px;
+				line-height: 24px;
+				margin-top: 10px;
+			}
+			.xieyi-p .aui-checkbox {
+				margin-right: 10px;
+			}
+			.aui-checkbox:checked {
+				background: #F13D3E;
+				border: 1px solid #F13D3E;
+			}
+			.xieyi-btn {
+				color: #F13D3E;
+			}
+			.yzm-btn {
+				top: 4px;
+			}
+			.yzm-input {
+				border: none !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="headbar" class="flex-td1">
+			<div class="flex-tr">
+				<div class="flex-tr-1">
+					<a onclick="api.closeWin();" class="head-my">
+						<span class="iconfont icon-chevron-copy"></span>
+					</a>
+				</div>
+				<div class="flex-tr-2">
+					<span class="logo">修改手机号码 </span>
+				</div>
+				<div  class="flex-tr-3"></div>
+			</div>
+		</div>
+		<div class="login-form marTop20">
+			<div class="aui-content mt-10">
+				<div class="aui-form">
+					<div class="aui-input-row">
+						<span class="aui-input-addon">
+							<span class="iconfont icon-shouji"></span>
+						</span>
+						<input type="text" class="aui-input" placeholder="请输入原手机号码"/>
+					</div>
+					<div class="aui-input-row">
+						<span class="aui-input-addon">
+							<span class="iconfont icon-mima"></span>
+						</span>
+						<div class="aui-col-xs-8">
+							<input type="text" class="aui-input" placeholder="请先输入图片验证码"/>
+						</div>
+						<div class="aui-col-xs-4">
+							<img src="../image/txone.jpg" class="marTop10 marLeft10" />
+						</div>
+					</div>
+					<div class="aui-input-row">
+						<span class="aui-input-addon">
+							<span class="iconfont icon-mima"></span>
+						</span>
+						<div class="aui-col-xs-8">
+							<input class="aui-input" type="text" placeholder="请填短信写验证码">
+						</div>
+						<div class="aui-col-xs-4">
+							<button class="yzm-btn">
+								发送验证码
+							</button>
+						</div>
+					</div>
+					<div class="aui-input-row">
+						<span class="aui-input-addon">
+							<span class="iconfont icon-shouji"></span>
+						</span>
+						<input type="text" class="aui-input" placeholder="请输入新手机号码"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul class="myinfo-list-all">
+			<button onclick="nextForget()" class="save-btn">
+				确定
+			</button>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+		};
+		function nextForget() {
+			api.openWin({
+				name : 'new-haoma-success',
+				url : 'new-haoma-success.html'
+			});
+		}
+	</script>
+</html>

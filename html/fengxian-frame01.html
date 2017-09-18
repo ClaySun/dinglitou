@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			select,
+			option {
+				margin: 0;
+				padding: 0;
+				padding-left: 10px;
+				color: #666;
+				border: 1px solid #ddd !important;
+			}
+			input[type="text"] {
+				margin: 0;
+				padding: 0;
+				border: 1px solid #ddd;
+				width: 100%;
+				font-size: 12px;
+				/*padding-top: 2px;
+				padding-bottom: 2px;*/
+				padding-left: 10px;
+				border-radius: 4px;
+			}
+			.info-area {
+				margin: 10px;
+				padding: 10px;
+				margin-bottom: 40px;
+			}
+			span.icon-shoucang02 {
+				font-size: 10px;
+			}
+			.btn-guoji {
+				padding: 2px;
+				color: #fff;
+				border-radius: 4px;
+				margin-left: 10px;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-left: 30%;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="info-area bgcolorfff">
+			
+			<div class="font12 color333">
+				<div class="floatL" style=" width:28%; text-align: left; margin-right: 2%;">					
+					<span style=" line-height: 24px;">您的身份:</span>
+				</div>
+				<div class="floatL" style=" width:68%; margin-right: 2%;">
+					<select>
+						<option>请选择</option>
+						<option>个人投资者</option>
+						<option>机构投资者</option>
+					</select>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="font12 color333 marTop20">
+				<div class="floatL" style=" width:28%; text-align: left; margin-right: 2%;">
+					<span>个人/机构名称:</span>
+				</div>
+				<div class="floatL" style=" width:68%; margin-right: 2%;">
+					<input type="text" placeholder="Clay Sun">
+				</div>
+				<div class="clearfix"></div>
+			</div>				
+		</div>
+		
+		<ul class="myinfo-list-all">
+			<button onclick="next()" class="next-btn">
+				保存并下一步
+			</button>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//保存并下一步
+		function next() {
+			api.openWin({
+				name : 'fengxian02',
+				url : 'fengxian02.html',
+			});
+		}
+	</script>
+</html>

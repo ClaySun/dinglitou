@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.list-data-style {
+				color: #888;
+				font-size: 12px;
+				line-height: 24px;
+			}
+			span.iconfont {
+				line-height: 24px;
+				margin-right: 4px;
+			}
+		</style>
+	</head>
+	<body>		
+		<div onclick="myProj()">	
+			<div class="img-content">
+				<img src="../image/project02.jpg" class="img-responsive">
+				<div class="img-text-index">
+					<div class="font12 colorfff">【益涂】</div>
+					<div class="font12 color888">全球涂鸦书写墙的领导者</div>
+				</div>
+			</div>		
+			<div class="list-content">
+				<div class="floatL list-data">融资总额：780.00万</div>
+				<div class="floatR list-data">出让股权：13.000%</div>
+				<div class="clearfix"></div>
+				<div class="fengexian"></div>
+				<div class="floatL list-data-style">
+					<span class="iconfont icon-weizhi"></span>上海市
+				</div>
+				<div class="floatR list-data-style">
+					<span class="iconfont icon-kejian"></span>3037
+				</div>
+				<div class="clearfix"></div>
+			</div>	
+		</div>		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//打开项目详情
+		function myProj(){
+			api.openWin({
+			name: 'projects',
+				url: './projects-head.html',
+			});
+		}
+	</script>
+</html>

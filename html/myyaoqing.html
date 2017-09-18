@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.tab-active span {
+				color: #3896ff !important;
+				display: block;
+				height: 30px;
+				/*font-size: 14px;*/
+				line-height: 30px;
+				margin: auto;
+				border-bottom: 1px solid #3896ff;
+			}
+			.aui-tab-nav li {
+				padding-top: 8px;
+				/*padding-left: 8px;
+				padding-right: 8px;*/
+				margin-left: 2px;
+				margin-right: 2px;
+				line-height: 35px;
+				border-bottom: 1px solid #fff;
+				font-size: 14px;
+			}
+			.flex-tr-3 {
+				width: 65px;
+			}	
+			.flex-td3 { border: none;}
+			nav { background: none;}
+			.flex-td3 i {
+				color: #fff;
+				line-height: 52px;
+				font-size: 14px;
+			}	
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-left: 30%;
+				margin-bottom: 10px;
+				margin-top: 40px;
+			}	
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my">
+							<span class="iconfont icon-chevron-copy"></span>
+						</a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">填写邀请人</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>
+			<div class="flex-td2">
+				<div class="yaoqing-title">邀请码提交后不能修改!</div>
+				<div class="bgcolorfff">
+					<span class="font12 color333 marLeft10 marRgiht10">请填写邀请码:</span>
+					<input type="text" />
+				</div>
+				<ul class="myinfo-list-all">
+					<button onclick="next()" class="next-btn">
+						提交
+					</button>
+				</ul>
+			</div>
+			<!--<div id="footer" class="flex-td3">
+				<nav>
+					<div class="menu bgcolorff4426">
+						<a onclick="myNews()"> 
+							<i>提交</i> 
+						</a>
+					</div>					
+				</nav>
+			</div>-->
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);			
+		}	
+		//提交
+		function next() {
+			api.alert({
+			    title: '提示',
+			    msg: '提交成功',
+			}, function(ret, err) {
+				api.closeWin()
+			});
+		}	
+	</script>
+</html>

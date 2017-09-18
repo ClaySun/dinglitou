@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.tab-active span {
+				color: #3896ff !important;
+				display: block;
+				/*width: 90%;*/
+				height: 30px;
+				/*font-size: 14px;*/
+				line-height: 30px;
+				margin: auto;
+				border-bottom: 1px solid #3896ff;
+			}
+			.aui-tab-nav li {
+				padding-top: 8px;
+				/*padding-left: 8px;
+				padding-right: 8px;*/
+				margin-left: 2px;
+				margin-right: 2px;
+				line-height: 35px;
+				border-bottom: 1px solid #fff;
+				font-size: 14px;
+			}
+			.flex-tr-3 {
+				width: 65px;
+			}			
+		</style>
+	</head>
+	<body>
+		<div id="headbar" class="flex-td1">
+			<div class="flex-tr">
+				<div class="flex-tr-1">
+					<a onclick="api.closeWin();" class="head-my">
+						<span class="iconfont icon-chevron-copy"></span>
+					</a>
+				</div>
+				<div class="flex-tr-2">
+					<span class="logo">课程介绍</span>
+				</div>
+				<div class="flex-tr-3">
+					<a class="head-my02 floatL">
+						<div class="circle02">
+							<span class="iconfont icon-unie637"></span>
+						</div>
+					</a>
+					<a onclick="share();" class="head-my02 floatL">
+						<div class="circle02"> 
+							<span class="iconfont icon-fenxiang"></span>
+						</div>
+					</a>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="aui-tab" id="title">
+			<ul class="aui-tab-nav" id="demo1">
+				<li data="0" class="tab-active">
+					<span>基本介绍</span>
+				</li>
+				<li data="1">
+					<span>团队成员</span>
+				</li>
+				<li data="2">
+					<span>课程视频</span>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+			//选项卡
+			api.parseTapmode();
+			var demo1 = $api.domAll("#demo1 li");
+			for (var i in demo1) {
+				$api.addEvt(demo1[i], 'click', function() {
+					$api.removeCls($api.dom("#demo1 li.tab-active"), 'tab-active');
+					$api.addCls(this, 'tab-active');
+					var index = $api.attr(this, "data");
+					api.setFrameGroupIndex({
+						name : 'instructionGroup',
+						index : index,
+						scroll : true
+					});
+				});
+			}
+			//打开选项卡
+			api.openFrameGroup({
+				name : 'instructionGroup',
+				background : '#fff',
+				scrollEnabled : true,
+				rect : {
+					x : 0,
+					y : $api.byId('headbar').offsetHeight + $api.byId('title').offsetHeight,
+					w : 'auto',
+					h : api.winHeight - $api.byId('headbar').offsetHeight - $api.byId('title').offsetHeight
+				},
+				index : 0,
+				frames : [{
+					name : 'frame1',
+					url : 'projects-class-instruction-frame1.html',
+					bgColor : '#fff'
+				}, {
+					name : 'frame2',
+					url : 'projects-class-instruction-frame2.html',
+					bgColor : '#fff'
+				}, {
+					name : 'frame3',
+					url : 'projects-class-instruction-frame3.html',
+					bgColor : '#fff'
+				}]
+			}, function(ret, err) {
+				var index = ret.index;
+			});			
+		};
+		//分享
+		function share(){
+			api.actionSheet({
+			    title: '分享',
+			    cancelTitle: '取消',
+			    buttons: ['QQ', '微信好友', '微博','朋友圈']
+			}, function(ret, err) {
+			    var index = ret.buttonIndex;
+			});
+		}
+		
+		$(".circle02").click(function(){
+			$(this).find(".icon-unie637").removeClass("icon-unie637").addClass("icon-shoucang02")
+		})
+		
+	</script>
+</html>

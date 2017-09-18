@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, body {
+				background-color: #ebebeb;
+			}
+			textarea {
+				margin: 0;
+				padding: 4px;
+				border: 1px solid #ddd;
+				font-size: 12px;
+				color: #333;
+			}
+			select {
+				margin: 0;
+				padding: 0;
+				padding-left: 4px;
+				border: none;
+				background: none;
+				color: #3896ff;
+			}
+			input[type="text"] {
+				margin: 0;
+				padding: 0;
+				border: none;
+				border-radius: 4px;
+				padding-left: 4px;
+				font-size: 12px;
+				color: #333;
+			}
+			.text-style {
+				margin-left: 20px;
+				margin-right: 20px;
+				margin-top: 10px;
+				font-size: 12px;
+				color: #333;
+				text-align: center;
+			}
+			.aui-list-item-title {
+				float: left;
+				font-size: 12px;
+			}
+			.aui-list-item-right {
+				float: right;
+				font-size: 12px;
+			}
+			.aui-list li {
+				padding: 4px 10px;
+				line-height: 26px;
+				border-bottom: 1px solid #ddd;
+				background-color: #fff;
+			}
+			.aui-switch {
+				width: 46px;
+				height: 26px;
+				margin: 0 10px;
+				position: relative;
+				border: 1px solid #dddddd;
+				background-color: #ffffff;
+				vertical-align: middle;
+			}
+			.aui-switch:checked {
+				border-color: #3896ff;
+				box-shadow: #3896ff 0 0 0 26px inset;
+				background-color: #1abc9c;
+				transition: border ease 0.2s, box-shadow ease 0.2s, background-color ease 0.6s;
+			}
+			.title-lable {
+				text-align: right;
+				padding-right: 8px;
+			}
+			.next-btn {
+				background: #3896ff;
+				width: 40%;
+				color: #fff;
+				height: 40px;
+				font-size: 14px;
+				margin-left: 30%;
+				margin-bottom: 10px;
+			}
+			.img-area {
+				position: relative;
+				margin-right: 8px;
+				width: 40px;
+				height: 40px;
+				background-color: #eee;
+				/*overflow: hidden;*/
+				text-align: center;
+				line-height: 40px;
+			}
+			.iconfont.icon-tupian {
+				font-size: 18px;
+				/*vertical-align: middle;*/
+			}
+			.title-baifang {
+				text-align: left;
+				font-size: 12px;
+				line-height: 24px;
+				padding-top: 4px;
+				padding-right: 8px;
+			}
+			.aui-badge {
+				position: absolute;
+				top: -6px;
+				right: -6px;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				/*padding: 4px 6px;*/
+				font-size: 12px;
+				text-align: 20px;
+				font-size: 12px;
+				color: #fff;
+				background-color: #ff4426;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="aui-content aui-margin-b-15">
+			<ul class="aui-list aui-list-in marTop10">
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-col-xs-2 title-baifang">
+							拜访标题
+						</div>
+						<div class="aui-col-xs-10">
+							<input type="text" placeholder="填写拜访标题">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<textarea>项目沟通</textarea>
+					</div>
+					<div>
+						<div class="img-area floatL">
+							<div class="aui-badge">
+								<span style=" vertical-align: middle;">×</span>
+							</div>
+							<img src="../image/img.jpg" class="img-responsive" />							
+						</div>
+						<div class="img-area floatL">
+							<div class="aui-badge">
+								<span style=" vertical-align: middle;">×</span>
+							</div>
+							<img src="../image/img.jpg" class="img-responsive" />							
+						</div>
+						<div class="img-area floatL" onclick="imgpick()">
+							<span class="iconfont icon-tupian"></span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-col-xs-2 title-lable">
+							<span class="font10">跟进方式 : </span>
+						</div>
+						<div class="aui-col-xs-2">
+							<select class="font10">
+								<option>电话</option>
+								<option>拜访</option>
+							</select>
+							<div class="clearfix"></div>
+						</div>
+						<div class="aui-col-xs-4 title-lable">
+							<span class="font10">实际跟进时间 : </span>
+						</div>
+						<div class="aui-col-xs-4">
+							<span class="font10">2016-09-22 21:42:30</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-list-item-title">
+							客户
+						</div>
+						<div class="aui-list-item-right">
+							上海依扬商贸有限公司
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-list-item-title">
+							联系人
+						</div>
+						<div class="aui-list-item-right">
+							13162010179
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-list-item-title">
+							提醒
+						</div>
+						<div class="aui-list-item-right">
+							<input type="checkbox" class="aui-switch" checked>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li class="aui-list-item">
+					<div class="aui-list-item-inner">
+						<div class="aui-list-item-title">
+							提醒时间
+						</div>
+						<div class="aui-list-item-right" onclick="time()">
+							选择时间
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<ul class="myinfo-list-all">
+			<button onclick="next()" class="next-btn">
+				保存
+			</button>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		//保存
+		function next() {
+			api.openWin({
+				name : 'visitor-head',
+				url : 'visitor-head.html',
+			});
+		}
+
+		//选择时间
+		function time() {
+			api.openPicker({
+				type : 'date_time',
+				date : '2016-05-01 12:30',
+				title : '选择时间'
+			}, function(ret, err) {
+				if (ret) {
+					alert(JSON.stringify(ret));
+				} else {
+					alert(JSON.stringify(err));
+				}
+			});
+		}
+
+		//图片选择
+		function imgpick() {
+			api.getPicture({
+				sourceType : 'album',
+				encodingType : 'jpg',
+				mediaValue : 'pic',
+				destinationType : 'url',
+				allowEdit : true,
+				quality : 50,
+				targetWidth : 100,
+				targetHeight : 100,
+				saveToPhotoAlbum : false
+			}, function(ret, err) {
+				if (ret) {
+					alert(JSON.stringify(ret));
+				} else {
+					alert(JSON.stringify(err));
+				}
+			});
+		}
+		//删除图片
+		$(".aui-badge").click(function() {
+			$(this).parents(".img-area").hide()
+		})
+	</script>
+</html>

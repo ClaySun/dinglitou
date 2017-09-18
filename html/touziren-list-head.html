@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style>
+			html, 
+			body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.tab-active span {
+				color: #3896ff !important;
+				display: block;
+				height: 30px;
+				/*font-size: 14px;*/
+				line-height: 30px;
+				margin: auto;
+				border-bottom: 1px solid #3896ff;
+			}
+			.aui-tab-nav li {
+				padding-top: 8px;
+				/*padding-left: 8px;
+				padding-right: 8px;*/
+				margin-left: 2px;
+				margin-right: 2px;
+				line-height: 35px;
+				border-bottom: 1px solid #fff;
+				font-size: 14px;
+			}
+			.flex-tr-3 {
+				width: 65px;
+			}	
+			.flex-td3 { border: none;}
+			nav { background: none;}
+			.flex-td3 i {
+				color: #fff;
+				line-height: 52px;
+				font-size: 14px;
+			}	
+			.flex-td3 .yiguanzhu {
+				color: #bbb;
+				line-height: 52px;
+				font-size: 14px;
+			}	
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1">
+						<a onclick="api.closeWin();" class="head-my">
+							<span class="iconfont icon-chevron-copy"></span>
+						</a>
+					</div>
+					<div class="flex-tr-2">
+						<span class="logo">个人投资者</span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>
+			<div class="flex-td2">
+				<div class="aui-tab" id="title">
+					<ul class="aui-tab-nav" id="demo2">
+						<li data="0" class="tab-active">
+							<span>成功案例</span>
+						</li>
+						<li data="1">
+							<span>投资理念</span>
+						</li>
+						<li data="2">
+							<span>关注的项目</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="footer" class="flex-td3">
+				<nav>
+					<div class="menu bgcolor3896ff">
+						<a onclick="tuijian()"> 
+							<i>自荐我的项目</i> 
+						</a>
+					</div>
+					<div class="menu bgcolorff4426">
+						<a> 
+							<i id="jiaguanzhu">+关注</i>
+							<i id="yiguanzhu" class="yiguanzhu">已关注</i> 
+						</a>
+					</div>					
+				</nav>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			//沉浸式
+			var headbar = $api.byId('headbar');
+			$api.fixIos7Bar(headbar);
+			//选项卡
+			api.parseTapmode();
+			var demo2 = $api.domAll("#demo2 li");
+			for (var i in demo2) {
+				$api.addEvt(demo2[i], 'click', function() {
+					$api.removeCls($api.dom("#demo2 li.tab-active"), 'tab-active');
+					$api.addCls(this, 'tab-active');
+					var index = $api.attr(this, "data");
+					api.setFrameGroupIndex({
+						name : 'touziren-Group',
+						index : index,
+						scroll : true
+					});
+				});
+			}
+			//打开选项卡
+			api.openFrameGroup({
+				name : 'touziren-Group',
+				background : '#fff',
+				scrollEnabled : true,
+				rect : {
+					x : 0,
+					y : $api.byId('headbar').offsetHeight + $api.byId('title').offsetHeight,
+					w : 'auto',
+					h : api.winHeight - $api.byId('headbar').offsetHeight - $api.byId('title').offsetHeight - $api.byId('footer').offsetHeight
+				},
+				index : 0,
+				frames : [{
+					name : 'frame1',
+					url : 'touziren-list-head-frame1.html',
+					bgColor : '#fff'
+				}, {
+					name : 'frame2',
+					url : 'touziren-list-head-frame2.html',
+					bgColor : '#fff'
+				}, {
+					name : 'frame3',
+					url : 'touziren-list-head-frame3.html',
+					bgColor : '#fff'
+				}]
+			}, function(ret, err) {
+				var index = ret.index;
+			});
+		};
+		
+		//自荐我的项目
+		function tuijian(){
+			api.openWin({
+			name: 'tuijian',
+				url: './tuijian.html',
+			});
+		}
+		$("#yiguanzhu").hide()
+		$("#jiaguanzhu").click(function(){
+			$(this).hide()
+			$(this).siblings("#yiguanzhu").show()
+		})
+	</script>
+</html>

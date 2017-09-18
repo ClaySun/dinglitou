@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>鼎力投股权众筹平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<style type="text/css">
+			html, body {
+				height: 100%;
+				background-color: #ebebeb;
+			}
+			.tab-active span {
+				color: #3896ff !important;
+				display: block;
+				width: 60%;
+				height: 30px;
+				/*font-size: 14px;*/
+				line-height: 30px;
+				margin: auto;
+				border-bottom: 1px solid #3896ff;
+			}
+			.aui-tab-nav li {
+				padding-top: 8px;
+				/*padding-left: 8px;
+				padding-right: 8px;*/
+				margin-left: 2px;
+				margin-right: 2px;
+				line-height: 35px;
+				border-bottom: 1px solid #fff;
+				font-size: 14px;
+			}
+			.banner-area {
+				height: 150px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flex-box">
+			<div id="headbar" class="flex-td1">
+				<div class="flex-tr">
+					<div class="flex-tr-1"></div>
+					<div class="flex-tr-2">
+						<span class="logo"> 资讯 </span>
+					</div>
+					<div class="flex-tr-3"></div>
+				</div>
+			</div>
+			<div class="flex-td2">
+				<div id="banner" class="banner-area"></div>
+				<!--<div class="flex-td2a">	</div>-->
+				<div class="flex-td2b" id="title">
+					<div class="aui-tab">
+						<ul class="aui-tab-nav" id="news">
+							<li data="0" class="tab-active">
+								<span>行业资讯</span>
+							</li>
+							<li data="1">
+								<span>公告</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="main" class="flex-con overflow-box"></div>
+			<div id="footer" class="footernav">
+				<nav>
+					<div class="menu">
+						<a  onclick="index()"> 
+							<span class="iconfont icon-chanpin nav-color"></span> 
+							<i>项目</i> 
+						</a>
+					</div>
+					<div class="menu active">
+						<a onclick="myProj()"> 
+							<span class="iconfont icon-news-copy nav-color"></span> 
+							<i>资讯</i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="touzizhe()"> 
+							<span class="iconfont icon-touzirentongji nav-color"></span> 
+							<i>投资人 </i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="myWin()"> 
+							<span class="iconfont icon-wode nav-color"></span> 
+							<i>我的</i> 
+						</a>
+					</div>
+					<div class="menu">
+						<a onclick="more()"> 
+							<span class="iconfont icon-gengduo nav-color"></span> 
+							<i>更多</i> 
+						</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+	apiready = function(){
+		//沉浸式
+		var headbar=$api.byId('headbar');
+		$api.fixIos7Bar(headbar);
+		//图片滚动
+		var UIScrollPicture = api.require('UIScrollPicture');
+		UIScrollPicture.open({
+			rect: {
+				x: 0,
+				y: $api.byId('headbar').offsetHeight,
+				w: api.winWidth,
+				h: $api.byId('banner').offsetHeight
+			},
+			data: {
+				paths: [
+					'widget://image/banner01.jpg',
+					'widget://image/banner01.jpg',
+				],
+			},
+			styles: {
+				indicator: {
+					align: 'center',
+					color: '#FFFFFF',
+					activeColor: '#DA70D6'
+				}
+			},
+			placeholderImg: 'widget://image/banner.jpg',
+			contentMode: 'scaleToFill',
+			interval: 3,
+			fixedOn: api.frameName,
+			loop: true,
+			fixed: false
+		});
+		
+		//选项卡
+		api.parseTapmode();
+		var demo1 = $api.domAll("#news li");
+		for (var i in demo1) {
+			$api.addEvt(demo1[i], 'click', function() {
+				$api.removeCls($api.dom("#news li.tab-active"), 'tab-active');
+				$api.addCls(this, 'tab-active');
+				var index = $api.attr(this, "data");
+				api.setFrameGroupIndex({
+					name : 'news-Group',
+					index : index,
+					scroll : true
+				});
+			});
+		}
+			
+		//打开选项卡
+		api.openFrameGroup({
+			name : 'news-Group',
+			background : '#fff',
+			scrollEnabled : true,
+			rect : {
+				x : 0,
+				y : $api.byId('headbar').offsetHeight + $api.byId('banner').offsetHeight + $api.byId('title').offsetHeight,
+				w : 'auto',
+				h : api.winHeight - $api.byId('headbar').offsetHeight - $api.byId('banner').offsetHeight - $api.byId('title').offsetHeight - $api.byId('footer').offsetHeight
+			},
+			index : 0,
+			frames : [{
+				name : 'frame1',
+				url : './news-list-frame1.html',
+				bgColor : '#fff'
+			}, {
+				name : 'frame2',
+				url : './news-list-frame2.html',
+				bgColor : '#fff'
+			}]
+		}, function(ret, err) {
+			var index = ret.index;
+		});
+		
+		}
+		
+		//打开产品
+		function index(){
+			api.openWin({
+				name: 'index',
+				url: '../index.html',
+				pageParam: {
+					name: 'index'
+				},
+				animation : {
+					type: "none" 
+				}
+			});
+		}
+				
+		//打开我的
+		function myWin(){
+			api.openWin({
+				name: 'my',
+				url: './my.html',
+				pageParam: {
+					name: 'my'
+				},
+				animation : {
+					type: "none" 
+				}
+			});
+		}
+		//打开项目详情
+		function myProj(){
+			api.openWin({
+			name: 'projects',
+				url: './projects-head.html',
+			});
+		}
+		//投资者
+		function touzizhe(){
+			api.openWin({
+				name: 'touziren',
+				url: './touziren-head.html',
+				animation : {
+					type: "none" 
+				}
+			});
+		}
+		//打开更多
+		function more(){
+			api.openWin({
+				name: 'more',
+				url: './more.html',
+				animation : {
+					type: "none" 
+				}
+			});
+		}
+	</script>
+</html>
